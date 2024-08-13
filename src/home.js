@@ -1,14 +1,16 @@
 import * as React from "react";
-import Cima from "./cima";
+import Header from "./header";
 import Footer from "./footer";
 import { Link } from "react-router-dom";
+import GoToTop from "./go_to_top";
+
 
 function Home() {
   return (
     
     <div className="flex flex-col bg-[color:var(--sds-color-background-default-default)] text-base">
 
-      <Cima></Cima>
+      <Header></Header>
 
       {/* titulo */}
       <div className="flex bg-fixed bg-cover saturate-0 bg-[url('./imagens/bulb.jpg')] relative overflow-hidden flex-col justify-center items-center px-16 py-20 text-8xl tracking-tight text-center backdrop-blur-[calc(var(--sds-size-blur-100] leading-[110.88px] min-h-[800px] text-[color:var(--sds-color-text-brand-on-brand-tertiary)] max-md:px-5 max-md:text-4xl
@@ -37,11 +39,11 @@ function Home() {
                 <div className="flex gap-5 max-md:flex-col max-md:gap-0 ">
                   
                   <div className="flex flex-col w-[32%] max-md:ml-0 max-md:w-full border-2 border-solid border-stone-900 border-opacity-60">
-                   <button><img
+                   <Link tabindex="-1"><img
                       loading="lazy"
                       src={require('./imagens/sobre.jpg')}
                       className="shrink-0 w-40 max-w-full  aspect-square  max-md:mt-10"
-                    /></button>
+                    /></Link>
                   </div>
 
                   <div className="flex flex-col ml-5 w-[68%] max-md:ml-0 max-md:w-full ">
@@ -66,11 +68,11 @@ function Home() {
                 <div className="flex gap-5 max-md:flex-col max-md:gap-0">
                  
                   <div className="flex flex-col w-[32%] max-md:ml-0 max-md:w-full">
-                    <button><img
+                    <Link tabindex="-1" to="/download"><img
                       loading="lazy"
                       src={require('./imagens/icone_download_melhor.png')}
                       className="shrink-0 w-48 max-w-full aspect-square max-md:mt-10 "
-                    /></button>
+                    /></Link>
                   </div>
 
                   <div className="flex flex-col ml-5 w-[68%] max-md:ml-0 max-md:w-full">
@@ -94,19 +96,19 @@ function Home() {
                 <div className="flex gap-5 max-md:flex-col max-md:gap-0">
                   
                   <div className="flex flex-col w-[37%] max-md:ml-0 max-md:w-full">
-                    <button><img
+                    <Link tabindex="-1" to="/registro"><img
                       loading="lazy"
                       src={require('./imagens/brasil_join.png')}
                       className="shrink-0 w-40 max-w-full border-2 border-solid aspect-square border-stone-900 border-opacity-60 max-md:mt-10"
-                    /></button>
+                    /></Link>
                   </div>
 
                   <div className="flex flex-col ml-5 w-[63%] max-md:ml-0 max-md:w-full">
                     <div className="flex flex-col self-stretch max-md:mt-10">
                       
-                      <button><div className="active:text-cyan-200 hover:text-stone-50 text-2xl font-semibold tracking-tight leading-7 text-[color:var(--sds-color-text-default-default)] text-start ">
+                      <Link to="/registro"><div className="active:text-cyan-200 hover:text-stone-50 text-2xl font-semibold tracking-tight leading-7 text-[color:var(--sds-color-text-default-default)] text-start ">
                         Registro
-                      </div></button>
+                      </div></Link>
 
                       <div className="mt-2 text-base leading-6 text-[color:var(--sds-color-text-default-secondary)]">
                         Registre seus componentes por região.
@@ -122,7 +124,7 @@ function Home() {
       
       {/*footer */}
       <Footer></Footer>
-
+      <GoToTop/>
     </div>
   );
 }
