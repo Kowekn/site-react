@@ -2,11 +2,16 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --tamanho-texto: 1.2rem;
+  --espaco-linha: 1.75rem;
+}
+
 body {
   margin: 0;
   font-family: 'Poppins';
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: auto;
+  -moz-osx-font-smoothing: auto;
   background-color: #1e1e1e;
   
   
@@ -23,9 +28,11 @@ footer {
 }
 
 #h {
-  font-size: 135%;
+  font-size: calc(var(--tamanho-texto) + 0.7rem);
   font-weight: bold;
   margin-bottom: 1rem;
+  -webkit-font-smoothing: auto;
+  -moz-osx-font-smoothing: auto;
 }
 
 #li {
@@ -39,9 +46,34 @@ footer {
 }
 
 #p {
-  
+  font-size: var(--tamanho-texto);  
+  line-height: var(--espaco-linha);
+  -webkit-font-smoothing: auto;
+  -moz-osx-font-smoothing: auto;
+}
+.p {
+  font-size: var(--tamanho-texto);  
+  line-height: var(--espaco-linha);
+}
+
+#rf {
+  font-size: 1.2rem;  
+  line-height: 1.9rem;
 }
 
 #a {
-  color: rgb(99, 139, 214)
+  color: rgb(99, 139, 214);
+   font-size: var(--tamanho-texto);  
+  line-height: var(--espaco-linha);
+  -webkit-font-smoothing: auto;
+  -moz-osx-font-smoothing: auto;
+}
+
+
+#t {
+  font-size: 8rem;
+}
+
+#in {
+  font-size: 1.06rem;
 }

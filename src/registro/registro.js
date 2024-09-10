@@ -7,8 +7,9 @@ import GoToTop from "../go_to_top";
 
 function Registro() {
     return(
-        <div>
+        <div className="bg-neutral-900">
         <Header></Header>
+        
         <Registro_form></Registro_form>
         <Footer></Footer>
         <GoToTop/>
