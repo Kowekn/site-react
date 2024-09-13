@@ -1,6 +1,5 @@
 import * as React from "react";
-import Header from "./header";
-import Footer from "./footer";
+
 import { Link } from "react-router-dom";
 import GoToTop from "./go_to_top";
 import {ReactComponent as IconeDownload} from  './imagens/icone_download_melhor.svg';
@@ -12,10 +11,10 @@ function Home() {
     
     <div className="flex flex-col bg-[color:var(--sds-color-background-default-default)] text-base bg-neutral-900">
 
-      <Header></Header>
+      
 
       {/* titulo */}
-      <div className="flex bg-fixed bg-cover saturate-0 bg-[url('./imagens/bulb.jpg')] relative overflow-hidden flex-col justify-center items-center px-16 py-20 text-8xl tracking-tight text-center backdrop-blur-[calc(var(--sds-size-blur-100] leading-[110.88px] min-h-[800px] text-[color:var(--sds-color-text-brand-on-brand-tertiary)] max-md:px-5 max-md:text-4xl
+      <div className="flex bg-fixed bg-cover w-full min-w-[20%] saturate-[1.25] contrast-[1.2] hue-rotate-[202deg]  bg-[url('./imagens/bulb.jpg')]  relative overflow-hidden flex-col justify-center items-center px-16 py-20 text-8xl tracking-tight text-center backdrop-blur-[calc(var(--sds-size-blur-100] leading-[110.88px] min-h-[800px] text-[color:var(--sds-color-text-brand-on-brand-tertiary)] max-md:px-5 max-md:text-4xl
        "
       >
      {/*<img
@@ -42,11 +41,11 @@ function Home() {
                   
                   <div className="flex flex-col  max-md:ml-0 max-md:w-full border-2 border-solid border-stone-900 border-opacity-60">
                    <Link tabindex="-1" to="/telas"><IconeTelas
-                      className=" max-w-full pb-8 aspect-square  max-md:mt-10"
+                      className=" size-48 max-w-full bg-transparent aspect-square max-md:mt-10 relative bottom-3  border-2 border-solid border-stone-900 border-opacity-60"
                    ></IconeTelas></Link>
                   </div>
 
-                  <div className="flex flex-col ml-5 w-[68%] max-md:ml-0 max-md:w-full ">
+                  <div className="flex flex-col ml-5 w-[68%] max-md:ml-0 max-md:w-full  ">
                     <div className="flex flex-col self-stretch max-md:mt-10 ">
                      
                      <Link to="/telas"> <div id="h" className="active:text-neutral-400 hover:text-stone-50 text-2xl font-semibold tracking-tight leading-7 text-[color:var(--sds-color-text-default-default)] text-start  ">
@@ -55,7 +54,7 @@ function Home() {
 
                       <div id="p" className="mt-2 text-base leading-6 text-[color:var(--sds-color-text-default-secondary)]">
                         Demonstração e tutorial de uso.
-                        <br />
+                        
                         Relatório, configurações e visualização
                       </div>
                     </div>
@@ -120,7 +119,7 @@ function Home() {
       </div>
       
       {/*footer */}
-      <Footer></Footer>
+      
       <GoToTop/>
     </div>
   );

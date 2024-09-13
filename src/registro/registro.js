@@ -1,17 +1,16 @@
 import React from "react";
-import Header from "../header";
-import Footer from "../footer";
+
 import Registro_form from "./registro_form";
 import GoToTop from "../go_to_top";
 
 
 function Registro() {
     return(
-        <div className="bg-neutral-900">
-        <Header></Header>
+        <div className="bg-[#03050F]">
+        
         
         <Registro_form></Registro_form>
-        <Footer></Footer>
+        
         <GoToTop/>
         </div>
     )

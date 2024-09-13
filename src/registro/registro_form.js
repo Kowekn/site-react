@@ -11,10 +11,11 @@ const [ComoInput, setComoInput] = useState("");
 const [CPFInput, setCPFInput] = useState("");
 
 const [Nome, setNome] = useState("");
-const [Endereco, setEndereco] = useState("");
 const [Email, setEmail] = useState("");
+const [Endereco, setEndereco] = useState("");
 const [Cidade, setCidade] = useState("");
 const [Estado, setEstado] = useState("");
+
 const [CEP, setCEP] = useState("");
 const [CPF, setCPF] = useState("");
 const [Inscr, setInscr] = useState("");
@@ -44,8 +45,8 @@ const VerificaInput = (e, setValue, index , Value) => {
     case 8:
 
     setTimeout(function faz() {
-
-    if(Value.length == 9 || Value.length == 8){
+      Value = e.target.value
+    if((Value.length == 9 || Value.length == 8)){
     let cep = Value.replace(/[^0-9]/, "");
 
     if(Value.length == 8 && Value.search(/[^0-9]/)){
@@ -57,14 +58,14 @@ const VerificaInput = (e, setValue, index , Value) => {
     fetch(`https://viacep.com.br/ws/${cep}/json/`)
     .then(response => {
       if(!response.ok) {
-        return response.text().then(text => { throw new Error(text) })
+        return response.text().then(text => text) 
        }
       else {
       response.json()
       .then(data => showData(data))
       }})
     
-      .catch(err => alert(err))
+      .catch(err => err)
     
     const showData = (result) => {
       for(const campo in result){
@@ -157,36 +158,36 @@ const VerificaInput = (e, setValue, index , Value) => {
    
     
   }
-const deleta = (e, setValue) =>{
-  if(e.keyCode === 8){
+const deleta = (e, setValue) => {
+  if(e.keyCode == 8){
         
-    setValue("");
+    
 }}
     {/*Titulo,                      required       type      pattern                                                codigo  State         setState        max-size */}
 const registros = 
 [ ["Nome de Registro",             "required",   "text",   false,                                                     1,   Nome,         setNome,        "255" ],
-  ["E-mail",                       "required",   "email",  "",                                                        2,   Endereco,     setEndereco,    "" ],
-  ["Endereço",                      "unrequired", "text",   "",                                                        3,   Email,        setEmail,       "" ],
+  ["E-mail",                       "required",   "email",  "",                                                        2,   Email,     setEmail,    "" ],
+  ["Endereço",                      "unrequired", "text",   "",                                                        3,   Endereco,  setEndereco,       "" ],
   ["Cidade",                        "unrequired",  "text",   false,                                                    4,   Cidade,       setCidade,      "" ],
   ["Estado",                        "unrequired",  "",       "",                                                        ,       ,                  ,      "" ],
   ["Número de Licenças",            "unrequired",  "",       "",                                                        ,       ,                  ,      "" ],
-  ["Como conheceu o componente",    "unrequired", "",       "",                                                         ,       ,                  ,      "" ],
+  ["Como conheceu o componente",    "unrequired", "",       "",                                                         , ComoInput,   setComoInput,      "" ],
   ["CEP",                           "unrequired", "text",   "",                                                        8,   CEP,          setCEP,         "9" ],
   ["CNPJ/CPF",                      "unrequired", "text",   "[1-9]{1}[0-9]{2}[\.]?[0-9]{3}[\.]?[0-9]{3}[-]?[0-9]{2}",  9,   CPF,          setCPF,         "14" ],
   ["Inscrição Estadual",            "unrequired", "text",   false,                                                    10,   Inscr,        setInscr,       "" ],
   ["Telefone",                      "unrequired", "tel",    "",                                                       11,   Tel,          setTel,         "14" ]];  
 
 
-const RegistroTextCssInput = `relative peer focus:outline-none block   bg-neutral-800 border border-neutral-600
-      box-border w-[100%] border-solid border-current border-[3px]  bg-transparent rounded pt-4 pl-4 pb-2`
+  const RegistroTextCssInput = `relative peer  block   bg-neutral-800 border border-[#4b7cd6]  placeholder-shown:border-zinc-400 focus:outline outline-[2px] outline-offset-[-3px] outline-neutral-100  focus:border-[#4b7cd6]
+  w-[100%]   border-4  bg-transparent rounded pt-4 pl-4 pb-2 font-extrabold`
 
-const RegistroTextCssSpan = `absolute top-[30%] left-2 pl-[10px] pr-[10px]     rounded-lg  
-      bg-neutral-900   origin-top-left transition-transform ease-in leading-tight 
-      peer-focus:translate-y-[-100%] peer-focus:scale-75 peer-[:not(:placeholder-shown)]:translate-y-[-100%] peer-[:not(:placeholder-shown)]:scale-75`
+const RegistroTextCssSpan = `absolute top-[30%] left-2 pl-[10px] pr-[10px]  font-extrabold   rounded-lg    font-extrabold
+ bg-slate-950   origin-top-left transition-transform ease-in leading-tight   
+ peer-focus:translate-y-[-100%] peer-focus:scale-75 peer-[:not(:placeholder-shown)]:translate-y-[-100%] peer-[:not(:placeholder-shown)]:scale-75 peer-focus:text-[#4b7cd6]`
 
 const RegistroTextCssDiv = `w-[100%] min-w-[400px] max-w-[600px] mb-2 mt-2`
 
-const RegistroHR = `w-[100%] min-w-[400px] max-w-[600px] border-zinc-500 relative bottom-4 left-0 bottom-2 mt-8`
+const RegistroHR = `w-[100%] min-w-[400px] max-w-[600px] border-zinc-400 relative bottom-4 left-0 bottom-2 mt-8`
 
 const Estados =  [["AC","Acre"],             ["AL","Alagoas"],               ["AP","Amapá"],                  ["AM","Amazonas"],    
                   ["BA","Bahia"],            ["CE","Ceará"],                 ["ES","Espirito Santo"],         ["GO","Goiânia"],               
@@ -215,13 +216,18 @@ const updatedConheceu = Conheceu?.map((item, index)=>{
   return <option value={Conheceu[index][0]}  ><p id="p">{Conheceu[index][1]}</p></option>
 })
 
-
+const [ComoCSS, setComoCSS] = useState("bg-neutral-800 ml-2 pl-2 pr-2 p-1 border-4 border-transparent outline-neutral-950"); 
 const updateComo = (item) => {
+  setComoCSS("bg-neutral-800 ml-2 pl-2 pr-2 p-1 border-4 border-transparent outline-neutral-950")
   if(item == "outro"){
     setComo(false);
   }else{
     setComo(true)
   }
+  if(item != "selecione"){
+    setComoCSS("bg-neutral-800 ml-2 pl-2 pr-2 p-1 border border-4 border-[#4b7cd6] outline-neutral-950")
+  }
+
 }
 
 const updateComoInput = (item) => {
@@ -230,6 +236,20 @@ const updateComoInput = (item) => {
   }else{
     
   }
+  
+}
+
+const [EstadoCSS, setEstadoCSS] = useState("bg-neutral-800 pl-4 pr-6 ml-2 p-1 border-4 border-transparent outline-neutral-950");
+
+
+const updateEstados = (e) => {
+  setEstado(e)
+  
+  setEstadoCSS("bg-neutral-800 pl-4 pr-6 ml-2 p-1  border-4 border-transparent  outline-neutral-950")
+  if(e != "selecione"){
+    setEstadoCSS("bg-neutral-800 ml-2 pl-2 pr-2 p-1 border border-4 border-[#4b7cd6] outline-neutral-950")
+  }
+
 }
 
 
@@ -239,11 +259,11 @@ const updatedRegistros = registros?.map((registro, index)=>{
   if(registros[index][0] == "Estado"){
     return <div ><hr className="w-[100%] min-w-[400px] max-w-[600px] border-zinc-500 relative bottom-4 left-0 bottom-4"></hr>
             <div className="block relative left-0 pl-5 mt-1 ">
-            <p id="p">
-            <label>Estado:</label>
-            <select name="estado" title="Estados" value={Estado} onChange={e => setEstado(e.target.value)}
-            className="bg-neutral-800 pl-4 pr-6 ml-2 p-1">
-            <option selected value><p id="p">--Selecione--</p></option>
+            <p id="p" className=" ">
+            <label className="font-extrabold ">Estado:</label>
+            <select name="estado" title="Estados" value={Estado} onChange={e => updateEstados(e.target.value)}
+            className={EstadoCSS}>
+            <option selected value="selecione" className="enabled:text-inherit"><p id="p">--Selecione--</p></option>
               {updatedEstados}
             </select> </p></div><hr className={RegistroHR}></hr>
             </div>;
@@ -251,25 +271,25 @@ const updatedRegistros = registros?.map((registro, index)=>{
   if(registros[index][0] == "Número de Licenças"){
     return <div><div className="block relative left-0 pl-5  mt-3">
                 <p id="p">
-                <label>Número de Licenças:</label>
+                <label className=" font-extrabold ">Número de Licenças:</label>
                 <select  name="licencas"
-                  className="bg-neutral-800 ml-2 pl-2 pr-2 p-1" >
+                  className="bg-neutral-800 ml-2 pl-2 pr-2 p-1 border border-4 border-[#4b7cd6] outline-neutral-950" >
                 <option value="1">1</option>
       
     </select></p></div><hr className={RegistroHR}></hr></div>;
   }
   if(registros[index][0] == "Como conheceu o componente"){
     return <div>
-    <div className="block relative left-0 pl-5  mt-3">
+    <div className="block relative left-0 pl-5  mt-3 ">
     <p id="p">
-    <label className="block">Como conheceu o componente:</label>
+    <label className="block  font-extrabold">Como conheceu o componente:</label>
     <select name="fonte" id="componente" onChange={event => updateComo(event.target.value)}
-      className=" bg-neutral-800 mt-2 ml-2 pl-2 pr-2 p-1"  >
-      <option selected value><p id="p">--Selecione--</p></option>
+      className={ComoCSS}  >
+      <option selected value="selecione"><p id="p">--Selecione--</p></option>
     {updatedConheceu}
     </select>
     <input type="text"  id="outro"  disabled={Como}  value={ComoInput} onChange={e => setComoInput(e.target.value)}  onFocus={event =>updateComoInput(event.target.value)} onKeyDown={e => deleta(e, registros[index][6])}
-        className="bg-neutral-800 pl-2 p-1" placeholder="Especifique" maxLength={30}></input>
+        className="bg-neutral-800 pl-2 p-1 pt-[5px] border-4 border-transparent" placeholder="Especifique" maxLength={30}></input>
     </p></div><hr className={RegistroHR}></hr></div>;
   }
   
@@ -344,9 +364,10 @@ const updatedRegistros = registros?.map((registro, index)=>{
                     
                     <div className="flex flex-row ">
                     <div className="w-[100%] min-w-[175px] max-w-[250px] "></div>
-                    <input id="in" type="Submit" value="Enviar" className="bg-inherit focus:outline-none  p-2 
-                    border border-neutral-500  border-[3px] rounded
-                      "></input> 
+                    <button id="in" type="Submit" value="Enviar" className=" focus:outline-none  p-4 text-neutral-50 
+                     rounded shadow-inner bg-[#4b7cd6] font-extrabold"  disabled
+                     >Enviar</button>
+                   
                         <div className="w-[75%]   "></div>
                       </div>
 

@@ -6,7 +6,7 @@ function Footer(){
     <footer>
       <div className="flex flex-col justify-center py-px bg-[color:var(--sds-color-background-default-secondary)] max-md:mr-0.5 max-md:max-w-full">
         <div className="flex flex-col justify-center items-start border border-solid border-neutral-700 max-md:pr-5 max-md:max-w-full">
-          <div className="flex flex-col flex-wrap  items-start py-7 pr-8 pl-3.5 max-w-full bg-[color:var(--sds-color-background-default-secondary)] w-[1208px] max-md:pr-5">
+          <div className="flex flex-col flex-wrap  items-start pt-5 pb-2 pr-8 pl-3.5 max-w-full bg-[color:var(--sds-color-background-default-secondary)] w-[1208px] max-md:pr-5">
             <div className="flex gap-2 ml-5 text-base leading-6 whitespace-nowrap text-zinc-800 max-md:ml-2.5">
               
               <a href="mailto:vagner@joinbit.com"><img

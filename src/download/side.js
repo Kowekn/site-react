@@ -11,9 +11,9 @@ const insertTopicos = topicos.map((item, index)=>{
     to={topicos[index][1]}>{topicos[index][0]}</Link></li>
 });
 
-function Download_side(){
+function Side(){
     return(
-        <div className="flex basis-1/4 h-auto bg-neutral-850 pr-4 pl-4 pb-32 pt-16 flex-col ">
+        <div className="basis-3/12  flex h-auto  pr-4 pl-4 pb-32 p-4 pl-8 flex-col bg-gradient-to-r from-neutral-800 to-neutral-900">
 
                     {/*<div className=""> 
                     <input type="text" placeholder="Pesquisar" className="text-inherit bg-neutral-800 focus:outline-none -mt-4"></input>
@@ -28,4 +28,4 @@ function Download_side(){
     )
 }
 
-export default Download_side;
+export default Side;

@@ -9,7 +9,7 @@ function Header() {
       <div className="flex flex-wrap gap-5  justify-between content-center px-7 py-4 w-full text-base leading-4 whitespace-nowrap border-b border-solid bg-neutral-950 border-neutral-800 text-[color:var(--sds-color-text-default-default)] max-md:px-5 max-md:max-w-full">
         {/* logo */}
         <Link to="/" ><div className=""><Logo
-        className=" size-20   rounded-full">
+        className=" size-16   rounded-full ">
         </Logo></div></Link>
         {/* header */}
         <div className="flex gap-4 items-center my-auto max-md:flex-wrap">
@@ -19,7 +19,7 @@ function Header() {
           <Link to="/registro"><div id="p" className="self-stretch my-auto hover:text-stone-50 active:text-neutral-400">Registro</div></Link>
           <Link to="/telas"><div id="p" className="self-stretch my-auto hover:text-stone-50 active:text-neutral-400">Telas</div></Link>
           <Link><div id="p" className="self-stretch my-auto hover:text-stone-50 active:text-neutral-400">FAQ</div></Link>
-          <Link><div id="p" className="self-stretch my-auto hover:text-stone-50 active:text-neutral-400">Opiniões</div></Link>
+          <Link to="/opinioes" ><div id="p" className="self-stretch my-auto hover:text-stone-50 active:text-neutral-400">Opiniões</div></Link>
           <Link><div id="p" className="self-stretch my-auto hover:text-stone-50 active:text-neutral-400">Contato</div></Link>
          <Link><div id="p" className="active:text-neutral-400 flex-1 justify-center self-stretch p-2 border border-solid bg-[color:var(--sds-color-background-default-tertiary-hover)] border-neutral-500 rounded max-md:px-7 hover:text-stone-50 hover:bg-zinc-700">
             Login
