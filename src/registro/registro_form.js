@@ -2,6 +2,9 @@ import React from "react";
 import Side_div from "../side_div";
 import { useState } from "react";
 import {ReactComponent as BrasilEscuro} from "../imagens/brasil_escuro.svg";
+import { BACKGROUND, FROM_BACKGROUND, TO_BACKGROUND, VIA_BACKGROUND, BORDER_BACKGROUND, BACKGROUND_LIGHT, 
+  FROM_BACKGROUND_LIGHT, TO_BACKGROUND_LIGHT, VIA_BACKGROUND_LIGHT, BORDER_BACKGROUND_LIGHT, ACCENT_ACCENT,FOCUS_BORDER_ACCENT, HAS_BORDER_ACCENT, 
+  TEXT_ACCENT,PEER_CHECKED_TEXT_ACCENT,PEER_FOCUS_TEXT_ACCENT, BORDER_ACCENT, OUTLINE_ACCENT, BG_ACCENT, TEXT_MAIN, BORDER_MAIN,PLACEHOLDER_BORDER_MAIN, OUTLINE_MAIN } from "../css_consts";
 
 function Registro_form() {
 
@@ -178,16 +181,16 @@ const registros =
   ["Telefone",                      "unrequired", "tel",    "",                                                       11,   Tel,          setTel,         "14" ]];  
 
 
-  const RegistroTextCssInput = `relative peer  block   bg-neutral-800 border border-[#4b7cd6]  placeholder-shown:border-zinc-400 focus:outline outline-[2px] outline-offset-[-3px] outline-neutral-100  focus:border-[#4b7cd6]
+  const RegistroTextCssInput = `relative peer  block   bg-neutral-800 border ${BORDER_ACCENT}  ${PLACEHOLDER_BORDER_MAIN} focus:outline outline-[2px] outline-offset-[-3px] outline-neutral-100  focus:${BORDER_ACCENT}
   w-[100%]   border-4  bg-transparent rounded pt-4 pl-4 pb-2 font-extrabold`
 
 const RegistroTextCssSpan = `absolute top-[30%] left-2 pl-[10px] pr-[10px]  font-extrabold   rounded-lg    font-extrabold
- bg-slate-950   origin-top-left transition-transform ease-in leading-tight   
- peer-focus:translate-y-[-100%] peer-focus:scale-75 peer-[:not(:placeholder-shown)]:translate-y-[-100%] peer-[:not(:placeholder-shown)]:scale-75 peer-focus:text-[#4b7cd6]`
+ ${BACKGROUND}   origin-top-left transition-transform ease-in leading-tight   
+ peer-focus:translate-y-[-100%] peer-focus:scale-75 peer-[:not(:placeholder-shown)]:translate-y-[-100%] peer-[:not(:placeholder-shown)]:scale-75 ${PEER_FOCUS_TEXT_ACCENT}`
 
 const RegistroTextCssDiv = `w-[100%] min-w-[400px] max-w-[600px] mb-2 mt-2`
 
-const RegistroHR = `w-[100%] min-w-[400px] max-w-[600px] border-zinc-400 relative bottom-4 left-0 bottom-2 mt-8`
+const RegistroHR = `w-[100%] min-w-[400px] max-w-[600px] ${BORDER_MAIN} relative bottom-4 left-0 bottom-2 mt-8`
 
 const Estados =  [["AC","Acre"],             ["AL","Alagoas"],               ["AP","Amapá"],                  ["AM","Amazonas"],    
                   ["BA","Bahia"],            ["CE","Ceará"],                 ["ES","Espirito Santo"],         ["GO","Goiânia"],               
@@ -210,22 +213,22 @@ const Conheceu = [
 ["busca",         "Busca pela internet"],
 ["superdown",     "SuperDownloads"],
 ["baixaki",       "Baixaki"],
-["outro",         "Outro (especifique)"]]
+["outro",         "Outro (Especifique)"]]
 
 const updatedConheceu = Conheceu?.map((item, index)=>{
   return <option value={Conheceu[index][0]}  ><p id="p">{Conheceu[index][1]}</p></option>
 })
 
-const [ComoCSS, setComoCSS] = useState("bg-neutral-800 ml-2 pl-2 pr-2 p-1 border-4 border-transparent outline-neutral-950"); 
+const [ComoCSS, setComoCSS] = useState(`${BACKGROUND} ml-2 pl-2 pr-2 p-1 border-4 border-transparent outline-neutral-950`); 
 const updateComo = (item) => {
-  setComoCSS("bg-neutral-800 ml-2 pl-2 pr-2 p-1 border-4 border-transparent outline-neutral-950")
+  setComoCSS(`${BACKGROUND} ml-2 pl-2 pr-2 p-1 border-4 border-transparent outline-neutral-950`)
   if(item == "outro"){
     setComo(false);
   }else{
     setComo(true)
   }
   if(item != "selecione"){
-    setComoCSS("bg-neutral-800 ml-2 pl-2 pr-2 p-1 border border-4 border-[#4b7cd6] outline-neutral-950")
+    setComoCSS(`${BACKGROUND} ml-2 pl-2 pr-2 p-1 border border-4 ${BORDER_ACCENT} outline-neutral-950`)
   }
 
 }
@@ -239,15 +242,15 @@ const updateComoInput = (item) => {
   
 }
 
-const [EstadoCSS, setEstadoCSS] = useState("bg-neutral-800 pl-4 pr-6 ml-2 p-1 border-4 border-transparent outline-neutral-950");
+const [EstadoCSS, setEstadoCSS] = useState(`${BACKGROUND} pl-4 pr-6 ml-2 p-1 border-4 border-transparent outline-neutral-950`);
 
 
 const updateEstados = (e) => {
   setEstado(e)
   
-  setEstadoCSS("bg-neutral-800 pl-4 pr-6 ml-2 p-1  border-4 border-transparent  outline-neutral-950")
+  setEstadoCSS(`${BACKGROUND} pl-4 pr-6 ml-2 p-1  border-4 border-transparent  outline-neutral-950`)
   if(e != "selecione"){
-    setEstadoCSS("bg-neutral-800 ml-2 pl-2 pr-2 p-1 border border-4 border-[#4b7cd6] outline-neutral-950")
+    setEstadoCSS(`${BACKGROUND} ml-2 pl-2 pr-2 p-1 border border-4 ${BORDER_ACCENT} outline-neutral-950`)
   }
 
 }
@@ -257,39 +260,39 @@ const updateEstados = (e) => {
 
 const updatedRegistros = registros?.map((registro, index)=>{
   if(registros[index][0] == "Estado"){
-    return <div ><hr className="w-[100%] min-w-[400px] max-w-[600px] border-zinc-500 relative bottom-4 left-0 bottom-4"></hr>
-            <div className="block relative left-0 pl-5 mt-1 ">
-            <p id="p" className=" ">
-            <label className="font-extrabold ">Estado:</label>
+    return <div ><hr className={`w-[100%] min-w-[400px] max-w-[600px] ${BORDER_MAIN} relative bottom-4 left-0 bottom-4`}></hr>
+            <div className={`block relative left-0 pl-5 mt-1 `}>
+            <p id="p" className={` `}>
+            <label className={`font-extrabold `}>Estado:</label>
             <select name="estado" title="Estados" value={Estado} onChange={e => updateEstados(e.target.value)}
             className={EstadoCSS}>
-            <option selected value="selecione" className="enabled:text-inherit"><p id="p">--Selecione--</p></option>
+            <option selected value="selecione" className={`enabled:text-inherit`}><p id="p">--Selecione--</p></option>
               {updatedEstados}
             </select> </p></div><hr className={RegistroHR}></hr>
             </div>;
   }
   if(registros[index][0] == "Número de Licenças"){
-    return <div><div className="block relative left-0 pl-5  mt-3">
+    return <div><div className={`block relative left-0 pl-5  mt-3`}>
                 <p id="p">
-                <label className=" font-extrabold ">Número de Licenças:</label>
+                <label className={` font-extrabold `}>Número de Licenças:</label>
                 <select  name="licencas"
-                  className="bg-neutral-800 ml-2 pl-2 pr-2 p-1 border border-4 border-[#4b7cd6] outline-neutral-950" >
+                  className={`${BACKGROUND} ml-2 pl-2 pr-2 p-1 border border-4 ${BORDER_ACCENT} outline-neutral-950`} >
                 <option value="1">1</option>
       
     </select></p></div><hr className={RegistroHR}></hr></div>;
   }
   if(registros[index][0] == "Como conheceu o componente"){
     return <div>
-    <div className="block relative left-0 pl-5  mt-3 ">
+    <div className={`block relative left-0 pl-5  mt-3 `}>
     <p id="p">
-    <label className="block  font-extrabold">Como conheceu o componente:</label>
+    <label className={`block  font-extrabold`}>Como conheceu o componente:</label>
     <select name="fonte" id="componente" onChange={event => updateComo(event.target.value)}
       className={ComoCSS}  >
       <option selected value="selecione"><p id="p">--Selecione--</p></option>
     {updatedConheceu}
     </select>
     <input type="text"  id="outro"  disabled={Como}  value={ComoInput} onChange={e => setComoInput(e.target.value)}  onFocus={event =>updateComoInput(event.target.value)} onKeyDown={e => deleta(e, registros[index][6])}
-        className="bg-neutral-800 pl-2 p-1 pt-[5px] border-4 border-transparent" placeholder="Especifique" maxLength={30}></input>
+        className={`${BACKGROUND} pl-2 p-1 pt-[5px] border-4 border-transparent`} placeholder="Especifique" maxLength={30}></input>
     </p></div><hr className={RegistroHR}></hr></div>;
   }
   
@@ -309,7 +312,7 @@ const updatedRegistros = registros?.map((registro, index)=>{
       else{
 
       return <div><div className={RegistroTextCssDiv}>
-      <label className="relative ">
+      <label className={`relative `}>
       <input  type={registros[index][2]} value={registros[index][5]} onChange={e => registros[index][6](e.target.value)} pattern={registros[index][3]}  onInput={event => VerificaInput(event, registros[index][6], registros[index][4],registros[index][5]) }    onKeyDown={e => deleta(e, registros[index][6])} 
       placeholder=" " className={RegistroTextCssInput} maxLength={registros[index][7]}
         ></input>
@@ -332,18 +335,18 @@ const updatedRegistros = registros?.map((registro, index)=>{
 
 
     return(
-        <div className="flex flex-row-reverse place-content-start" >
-            <Side_div></Side_div>
-            <div className="basis-5/12 p-4 place-content-center mb-8   ">
-              <div className=" "
+        <div className={`flex flex-row-reverse place-content-start`} >
+            
+            <div className={`basis-5/12 p-4 place-content-center mb-8   `}>
+              <div className={` `}
               ><BrasilEscuro
-                className="bg-neutral-800 rounded-[100px] p-16 max-w-[75%] h-[3%]  object-scale-down place-self-center"
+                className={`${BACKGROUND} rounded-[100px] p-16 max-w-[75%] h-[3%]  object-scale-down place-self-center`}
               ></BrasilEscuro></div>
             </div>
-            <div className=" basis-7/12 ">
+            <div className={` basis-7/12 `}>
             
             <div>
-            <p  id="rf"  className="text-start p-4 pl-8 leading-6" >
+            <p  id="rf"  className={`text-start p-4 pl-8 leading-6`} >
             O registro serve para caso perca o programa licenciador e tenha que solicitá-lo novamente. 
             <br></br>
             Após o cadastro será enviado um email com as instruções.
@@ -354,27 +357,27 @@ const updatedRegistros = registros?.map((registro, index)=>{
             Caso queira doar algum valor, as informações estarão no email do registro.
             <br></br>
             <br></br>
-            Campos com '<strong className="text-red-700">*</strong>' são obrigatórios</p>
+            Campos com '<strong className={`text-red-700`}>*</strong>' são obrigatórios</p>
             </div>
 
-            <fieldset className="m-4 pl-4  ">
+            <fieldset className={`m-4 pl-4  `}>
                 <form onPaste={e => e.preventDefault()}>
 
                     {updatedRegistros}
                     
-                    <div className="flex flex-row ">
-                    <div className="w-[100%] min-w-[175px] max-w-[250px] "></div>
-                    <button id="in" type="Submit" value="Enviar" className=" focus:outline-none  p-4 text-neutral-50 
-                     rounded shadow-inner bg-[#4b7cd6] font-extrabold"  disabled
+                    <div className={`flex flex-row `}>
+                    <div className={`w-[100%] min-w-[175px] max-w-[250px] `}></div>
+                    <button id="in" type="Submit" value="Enviar" className={` focus:outline-none  p-4 text-neutral-50 
+                     rounded shadow-inner ${BG_ACCENT} font-extrabold`}  disabled
                      >Enviar</button>
                    
-                        <div className="w-[75%]   "></div>
+                        <div className={`w-[75%]   `}></div>
                       </div>
 
                 </form>
             </fieldset>
             </div>
-            <Side_div></Side_div>
+            
             
         </div>
     )

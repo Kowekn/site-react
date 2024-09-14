@@ -1,12 +1,13 @@
 import React from "react";
-
 import ReleaseNotes from "../apps/releasenotes.pdf";
 import ReportXMain from "../apps/repx5101_rt.exe";
 import Virtualizador from "../apps/repxr301_rt.exe";
-
 import Virtualizador14 from "../apps/repx492_rt.exe";
 import Virtualizador13 from "../apps/repx375.exe";
 import Virtualizador12 from "../apps/repx261.exe";
+import { BACKGROUND, FROM_BACKGROUND, TO_BACKGROUND, VIA_BACKGROUND, BORDER_BACKGROUND, BACKGROUND_LIGHT, 
+    FROM_BACKGROUND_LIGHT, TO_BACKGROUND_LIGHT, VIA_BACKGROUND_LIGHT, BORDER_BACKGROUND_LIGHT, ACCENT_ACCENT, 
+    TEXT_ACCENT, BORDER_ACCENT, OUTLINE_ACCENT, BG_ACCENT, TEXT_MAIN, BORDER_MAIN, OUTLINE_MAIN } from "../css_consts";
 
 
 const numbers = ["ReportX.OCX - Arquivo que contém o componente.",
@@ -36,10 +37,10 @@ const ItensTabelaAnteriores = [["Versões anteriores","" ],
 
 
 
-const TableCSS =    `w-[600px] self-center  mb-4 bg-gradient-to-t from-[#1b2b4d] to-[#090e1a] via-[#121c33]
-                    border border-collapse border-spacing-2   bg-[#0a0d0f73] `; 
+const TableCSS =    `w-[600px] self-center  mb-4 bg-gradient-to-t ${FROM_BACKGROUND_LIGHT} ${TO_BACKGROUND} ${VIA_BACKGROUND_LIGHT}
+                    border border-collapse border-spacing-2   ${BACKGROUND_LIGHT} `; 
 
-const TheadCSS = `border border-[#090e1a] bg-[#090e1a]  `;
+const TheadCSS = `border ${BORDER_BACKGROUND} ${BACKGROUND}  `;
 
 const TbodyCSS = `border-2 border-transparent  pl-2 bg-inherit `;
 const TanchorCSS = `active:text-cyan-200 hover:text-stone-50`;
@@ -88,17 +89,17 @@ const TextoCSS = ``
 
 function Main() {
     return(
-        <div className="basis-full " >       
+        <div className={`basis-full bg-gradient-to-r ${FROM_BACKGROUND} ${TO_BACKGROUND_LIGHT} ${VIA_BACKGROUND} `} >       
         
         <div>
-            <div className=""> 
+            <div className={``}> 
                 {/* side bar  */}
                 
                 
 
                 {/* main */}
-                <div className="flex flex-col  p-4 pl-8 bg-neutral-900 pb-16 ">
-                <div className="self-center ">
+                <div className={`flex flex-col  p-4 pl-8  pb-16 `}>
+                <div className={`self-center `}>
 
                 {/* tabela downloads */}
                 <table className={TableCSS}>
@@ -111,7 +112,7 @@ function Main() {
                 </div>
 
                 {/* info */}
-                <div className="pt-4 text-start "> 
+                <div className={`pt-4 text-start `}> 
                     <h3 id="h">Instalação</h3>
                     <p className={TextoCSS} id="p">Depois de fazer o download, execute o arquivo e o instalador irá copiar os arquivos necessários para o funcionamento do componente. 
                     Se você estiver utilizando o VB5, instale o pacote com o RunTime do VB6-SP6. 
@@ -132,7 +133,7 @@ function Main() {
                     
 
                 </div>
-                    <div className="self-center pt-4">  
+                    <div className={`self-center pt-4`}>  
                     {/* tabela anteriores */}
                     <table className={TableCSS}>
 

@@ -62,7 +62,7 @@ footer {
 }
 
 #a {
-  color: rgb(99, 139, 214);
+  color: #4b7cd6;
    font-size: var(--tamanho-texto);  
   line-height: var(--espaco-linha);
   -webkit-font-smoothing: auto;
