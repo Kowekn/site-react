@@ -7,12 +7,35 @@
   --espaco-linha: 1.75rem;
 }
 
+.light{
+  --main: 3, 5, 15;
+  --dark: 163, 183, 187;
+  --light: 192, 204, 209;
+  --accent: 75, 124, 214;
+  --active: 56, 62, 63;
+  --hover: 92, 102, 103;
+}
+
+.dark{
+  --main: 192, 204, 209;
+  --dark: 3, 5, 15;
+  --light: 24, 24, 36;
+  --accent: 75, 124, 214;
+  --active: 163, 173, 177;
+  --hover: 234, 248, 255;
+  
+}
+
+
+
+
+
 body {
   margin: 0;
   font-family: 'Poppins';
   -webkit-font-smoothing: auto;
   -moz-osx-font-smoothing: auto;
-  background-color: #1e1e1e;
+  background-color: rgba(var(--dark));
   
   
 }
@@ -23,13 +46,19 @@ code {
     
 }
 
-footer {
-  background-color: #2d2d2d;
+
+
+input::placeholder, textarea::placeholder {
+  font-weight: 600;
+  opacity: 0.75;
+  color: rgba(var(--main))
+  
 }
+
 
 #h {
   font-size: calc(var(--tamanho-texto) + 0.7rem);
-  font-weight: bold;
+  
   margin-bottom: 1rem;
   -webkit-font-smoothing: auto;
   -moz-osx-font-smoothing: auto;
@@ -50,6 +79,7 @@ footer {
   line-height: var(--espaco-linha);
   -webkit-font-smoothing: auto;
   -moz-osx-font-smoothing: auto;
+  
 }
 .p {
   font-size: var(--tamanho-texto);  
@@ -62,7 +92,7 @@ footer {
 }
 
 #a {
-  color: #4b7cd6;
+  color: rgba(var(--accent));
    font-size: var(--tamanho-texto);  
   line-height: var(--espaco-linha);
   -webkit-font-smoothing: auto;

@@ -4,9 +4,7 @@ import Side_div from "../side_div";
 import Imagem1 from "../imagens/Imagem_telas_1.png";
 import Imagem2 from "../imagens/Imagem_telas_2.png";
 import Imagem3 from "../imagens/Imagem_telas_3.png";
-import { BACKGROUND, FROM_BACKGROUND, TO_BACKGROUND, VIA_BACKGROUND, BORDER_BACKGROUND, BACKGROUND_LIGHT, 
-    FROM_BACKGROUND_LIGHT, TO_BACKGROUND_LIGHT, VIA_BACKGROUND_LIGHT, BORDER_BACKGROUND_LIGHT, ACCENT_ACCENT, 
-    TEXT_ACCENT, BORDER_ACCENT, OUTLINE_ACCENT, TEXT_MAIN, BORDER_MAIN, OUTLINE_MAIN } from "../css_consts";
+
 
 function Telas() {
 
@@ -14,7 +12,7 @@ const DivCSS = `flex flex-col`
 
 const TextoCSS = `pl-4 pb-4`
 
-const ImagemCSS = `place-self-center shadow-lg brightness-[.95]  `
+const ImagemCSS = `place-self-center shadow-md shadow-accent brightness-[.85]  `
 
 const seila =  
     [[`Formulário de configuração`,
@@ -66,7 +64,7 @@ const printa = seila.map((item, index) =>{
             
             <div className={`flex flex-row `}>
             <Side_div></Side_div>
-            <div className={`basis-full flex flex-col gap-y-4 p-4 pb-8 bg-gradient-to-r ${FROM_BACKGROUND_LIGHT} ${TO_BACKGROUND_LIGHT} ${VIA_BACKGROUND}`}>
+            <div className={`basis-full flex flex-col gap-y-4 p-4 pb-8 bg-gradient-to-r from-light to-light via-dark`}>
             {printa}
             </div>
             <Side_div></Side_div>

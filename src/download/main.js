@@ -5,9 +5,7 @@ import Virtualizador from "../apps/repxr301_rt.exe";
 import Virtualizador14 from "../apps/repx492_rt.exe";
 import Virtualizador13 from "../apps/repx375.exe";
 import Virtualizador12 from "../apps/repx261.exe";
-import { BACKGROUND, FROM_BACKGROUND, TO_BACKGROUND, VIA_BACKGROUND, BORDER_BACKGROUND, BACKGROUND_LIGHT, 
-    FROM_BACKGROUND_LIGHT, TO_BACKGROUND_LIGHT, VIA_BACKGROUND_LIGHT, BORDER_BACKGROUND_LIGHT, ACCENT_ACCENT, 
-    TEXT_ACCENT, BORDER_ACCENT, OUTLINE_ACCENT, BG_ACCENT, TEXT_MAIN, BORDER_MAIN, OUTLINE_MAIN } from "../css_consts";
+
 
 
 const numbers = ["ReportX.OCX - Arquivo que contém o componente.",
@@ -37,10 +35,10 @@ const ItensTabelaAnteriores = [["Versões anteriores","" ],
 
 
 
-const TableCSS =    `w-[600px] self-center  mb-4 bg-gradient-to-t ${FROM_BACKGROUND_LIGHT} ${TO_BACKGROUND} ${VIA_BACKGROUND_LIGHT}
-                    border border-collapse border-spacing-2   ${BACKGROUND_LIGHT} `; 
+const TableCSS =    `w-[600px] self-center  mb-4 bg-gradient-to-t from-light to-dark via-light
+                    border border-collapse border-spacing-2   bg-light `; 
 
-const TheadCSS = `border ${BORDER_BACKGROUND} ${BACKGROUND}  `;
+const TheadCSS = `border border-dark bg-dark  `;
 
 const TbodyCSS = `border-2 border-transparent  pl-2 bg-inherit `;
 const TanchorCSS = `active:text-cyan-200 hover:text-stone-50`;
@@ -89,7 +87,7 @@ const TextoCSS = ``
 
 function Main() {
     return(
-        <div className={`basis-full bg-gradient-to-r ${FROM_BACKGROUND} ${TO_BACKGROUND_LIGHT} ${VIA_BACKGROUND} `} >       
+        <div className={`basis-full bg-gradient-to-r from-dark to-light via-dark `} >       
         
         <div>
             <div className={``}> 

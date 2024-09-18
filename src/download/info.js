@@ -1,9 +1,7 @@
 import React from "react";
 
 import { Link } from "react-router-dom";
-import { BACKGROUND, FROM_BACKGROUND, TO_BACKGROUND, VIA_BACKGROUND, BORDER_BACKGROUND, BACKGROUND_LIGHT, 
-    FROM_BACKGROUND_LIGHT, TO_BACKGROUND_LIGHT, VIA_BACKGROUND_LIGHT, BORDER_BACKGROUND_LIGHT, ACCENT_ACCENT, 
-    TEXT_ACCENT, BORDER_ACCENT, OUTLINE_ACCENT, BG_ACCENT, TEXT_MAIN, BORDER_MAIN, OUTLINE_MAIN } from "../css_consts";
+
 
 
 
@@ -13,7 +11,7 @@ const TextoCSS = ``
 
 function Info(){
     return(
-        <div className={`basis-full bg-gradient-to-r ${FROM_BACKGROUND} ${TO_BACKGROUND_LIGHT} ${VIA_BACKGROUND}`} >       
+        <div className={`basis-full bg-gradient-to-r from-dark to-light via-dark`} >       
         
         <div>
             <div className={``}> 

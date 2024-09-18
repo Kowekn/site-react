@@ -9,17 +9,26 @@ import Registro from './registro/registro.js';
 import Telas from './telas/telas_main.js';
 import Header from './header.js';
 import Footer from './footer.js';
-import Opinioes from './opinioes/opinioes.js';
+import Opiniao from './opinioes/opiniao.js';
+import FAQ from './faq/faq.js';
+import Links from './links/links.js';
+import Contato from './contato/contato.js';
 
 
 
 function App() {
+  
+  
+  
+
   return (
-    
-    <div className="App ">
+    <div className={`App text-main`}>
     <Head></Head>
     
+    
+    
     <Router>
+    
     <Header></Header>
       <Routes>
         <Route path="/" element={<Home />} />
@@ -27,9 +36,13 @@ function App() {
         <Route path="download/info" element={<Download_info />} />
         <Route path="registro" element={<Registro />} />
         <Route path="telas" element={<Telas />} />
-        <Route path="opinioes" element={<Opinioes />} />
+        <Route path="opiniao" element={<Opiniao />} />
+        <Route path="FAQ" element={<FAQ/>} />
+        <Route path="links" element={<Links/>} />
+        <Route path="contato" element={<Contato/>} />
       </Routes>
       <Footer></Footer>
+      
     </Router>
     
     </div>
