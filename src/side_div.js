@@ -1,5 +1,5 @@
 import React from "react";
-import * as consts from "./css_consts";
+
 
 function Side_div() {
     return(

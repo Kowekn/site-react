@@ -22,7 +22,7 @@ function App() {
   
 
   return (
-    <div className={`App text-main`}>
+    <div className={`App text-main `}>
     <Head></Head>
     
     
@@ -30,7 +30,8 @@ function App() {
     <Router>
     
     <Header></Header>
-      <Routes>
+    
+      <Routes >
         <Route path="/" element={<Home />} />
         <Route path="download" element={<Download_main />} />
         <Route path="download/info" element={<Download_info />} />
@@ -41,6 +42,7 @@ function App() {
         <Route path="links" element={<Links/>} />
         <Route path="contato" element={<Contato/>} />
       </Routes>
+      
       <Footer></Footer>
       
     </Router>

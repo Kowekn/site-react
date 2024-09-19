@@ -3,7 +3,7 @@ import * as React from "react";
 import { Link } from "react-router-dom";
 import GoToTop from "./go_to_top";
 import {ReactComponent as IconeDownload} from  './imagens/icone_download_melhor.svg';
-import {ReactComponent as BrasilEscuro} from "./imagens/brasil_escuro.svg";
+import {ReactComponent as BrasilEscuro} from "./imagens/brasil_join.svg";
 import {ReactComponent as IconeTelas} from "./imagens/icone_telas.svg";
 import {ReactComponent as Bulb} from "./imagens/bulb4.svg";
 

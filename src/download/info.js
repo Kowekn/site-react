@@ -11,7 +11,7 @@ const TextoCSS = ``
 
 function Info(){
     return(
-        <div className={`basis-full bg-gradient-to-r from-dark to-light via-dark`} >       
+        <div className={`basis-full bg-gradient-to-r from-dark to-light`} >       
         
         <div>
             <div className={``}> 

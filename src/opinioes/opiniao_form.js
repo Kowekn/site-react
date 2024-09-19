@@ -13,8 +13,8 @@ function Opiniao_form(){
     {/*Titulo,                          required       type      pattern                                                codigo  State         setState        max-size     placeholder*/}
     const registros =     
 [   ["Nome de Registro",                "required",   "text",   false,                                                     1,   Nome,         setNome,        "255",      "Anônimo"],
-    ["E-mail",                          "required",   "email",  "",                                                        2,   Email,     setEmail,          "",         " "],
-    ["Como conheceu o componente",      "unrequired", "",       "",                                                         , ComoInput,   setComoInput,      "",         " "]
+    ["E-mail",                          "required",   "email",  "[A-Za-z0-9]+@{1}[A-Za-z0-9]+[\.]{1}[c]{1}[o]{1}[m]{1}",                                                        2,   Email,     setEmail,          "",         " "],
+    ["Como conheceu o componente",      "unrequired", "",       false,                                                         , ComoInput,   setComoInput,      "",         " "]
     
 ]
 const RegistroTextCssInput = `relative peer  block   bg-light border  placeholder-shown:border-main border-accent  focus:outline outline-[2px] outline-offset-[-3px] outline-main  focus:border-accent
@@ -47,9 +47,9 @@ const deleta = (e, setValue) => {
     const updatedConheceu = Conheceu?.map((item, index)=>{
       return <option value={Conheceu[index][0]}  ><p id="p">{Conheceu[index][1]}</p></option>
     })
-    const [ComoCSS, setComoCSS] = useState(`bg-light ml-2 pl-2 pr-2 p-1 border-4 border-transparent outline-main `); 
+    const [ComoCSS, setComoCSS] = useState(`bg-light ml-2 pl-2 pr-2 p-1 border-4 border-transparent outline-main rounded`); 
     const updateComo = (item) => {
-      setComoCSS(`bg-light ml-2 pl-2 pr-2 p-1 border-4 border-transparent outline-main `)
+      setComoCSS(`bg-light ml-2 pl-2 pr-2 p-1 border-4 border-transparent outline-main rounded`)
       if(item == "outro"){
         setComo(false);
       }else{
@@ -57,7 +57,7 @@ const deleta = (e, setValue) => {
         setComoInput("")
       }
       if(item != "selecione"){
-        setComoCSS(`bg-light ml-2 pl-2 pr-2 p-1 border border-4 border-accent outline-main `)
+        setComoCSS(`bg-light ml-2 pl-2 pr-2 p-1 border border-4 border-accent outline-main rounded`)
       }
     
     }
@@ -83,7 +83,7 @@ const deleta = (e, setValue) => {
             {updatedConheceu}
             </select>
             <input type="text"  id="outro"  disabled={Como}  value={ComoInput} onChange={e => setComoInput(e.target.value)}  onFocus={event =>updateComoInput(event.target.value)} onKeyDown={e => deleta(e, registros[index][6])}
-                className={`bg-light pl-2 p-1 pt-[5px] border-4 border-transparent focus:border-accent focus:outline outline-2 outline-offset-[-3px] font-semibold focus:outline-main`} placeholder="Especifique" maxLength={30}></input>
+                className={`rounded bg-light pl-2 p-1 pt-[5px] border-4 border-transparent focus:border-accent focus:outline outline-2 outline-offset-[-3px] font-semibold focus:outline-main`} placeholder="Especifique" maxLength={30}></input>
             </p></div><hr className={RegistroHR}></hr></div>;
           }
           else{

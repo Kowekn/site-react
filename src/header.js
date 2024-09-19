@@ -12,16 +12,17 @@ import { useState } from "react";
 
 function Header() {
 
-const [Tema, setTema] = useState(document.body.classList)
+
 
 const updateTema = (item) => {
-  document.body.classList.remove(Tema)
-  document.body.classList.add(item)
-  setTema(item)
+  
+  document.body.classList = " "
+  document.body.classList = item
+  
 }
 
 const [Navbar, setNavbar] = useState(`flex flex-wrap gap-5  justify-between content-center px-7 py-4 w-full text-base leading-4 whitespace-nowrap  border-light
-      border-solid bg-dark    text-main max-md:px-5 max-md:max-w-full sticky absolute top-0  z-50`)
+      border-solid bg-dark    text-main max-md:px-5 max-md:max-w-full sticky absolute top-0 ease-out duration-300 z-30`)
 
 var prevScrollpos = window.scrollY;
 
@@ -31,20 +32,37 @@ window.onscroll = function() {
    var currentScrollPos = window.scrollY;
   if (prevScrollpos > currentScrollPos && currentScrollPos > 150) {
     setNavbar(`flex flex-wrap gap-5  justify-between content-center px-7 py-4 w-full text-base leading-4 whitespace-nowrap  border-light
-      border-solid bg-dark    text-main max-md:px-5 max-md:max-w-full sticky absolute top-[-96px] ease-out duration-300 origin-top translate-y-[100%]  z-50`)
+      border-solid bg-dark    text-main max-md:px-5 max-md:max-w-full sticky absolute top-[-96px] ease-out duration-300 origin-top translate-y-[100%]  z-30`)
 
   }else if (prevScrollpos < currentScrollPos && currentScrollPos > 150){
     setNavbar(`flex flex-wrap gap-5  justify-between content-center px-7 py-4 w-full text-base leading-4 whitespace-nowrap  border-light
-      border-solid bg-dark  text-main max-md:px-5 max-md:max-w-full sticky absolute top-0 ease-out duration-300 origin-top translate-y-[-100%] z-50`)
+      border-solid bg-dark  text-main max-md:px-5 max-md:max-w-full sticky absolute top-0 ease-out duration-300 origin-top translate-y-[-100%] z-30`)
   }
   else{
     setNavbar(`flex flex-wrap gap-5  justify-between content-center px-7 py-4 w-full text-base leading-4 whitespace-nowrap  border-light
-      border-solid bg-dark    text-main max-md:px-5 max-md:max-w-full sticky absolute top-0  z-50`)
+      border-solid bg-dark    text-main max-md:px-5 max-md:max-w-full sticky absolute top-0 ease-out duration-300  z-30`)
   }
   prevScrollpos = currentScrollPos; 
   
 }
 
+const options = [
+  [`dark`, `Dark`],
+  [`light`, `Light`],
+  [`orange`, `Orange`],
+  [`red`, `Red`],
+  [``, ``]
+]
+
+const optionsCSS = `font-semibold`
+
+const updatedOptions = options?.map((item, index) => {
+  return (
+    <option value={options[index][0]} className={optionsCSS}>{options[index][1]}</option>
+  )
+})
+
+const selectCSS = `apearance-none p-2 border-2 border-light rounded-lg bg-light text-main font-semibold outline-accent focus:border-main`
 
     return(
 
@@ -55,11 +73,11 @@ window.onscroll = function() {
         </Logo></div></Link>
         {/* header */}
         <div className={`flex gap-4 items-center my-auto max-md:flex-wrap`}>
-
-        <button onClick={e => updateTema("light")} className={``}>Light</button>
-        <button onClick={e => updateTema("dark")} className={``}>Dark</button>
-
-         <Link to="/download"><div id="p" className={`active:text-active hover:text-hover hover:bg-active active:bg-hover justify-center self-stretch 
+        <p id="p" className="font-semibold"><select onChange={e => updateTema(e.target.value)}  className={selectCSS}>
+        {updatedOptions}
+        
+        </select></p>
+         <Link to="/download"><div id="p" className={`active:text-active hover:text-active hover:bg-light active:bg-hover justify-center self-stretch 
          p-2 bg-dark border border-solid rounded border-main 
          text-main`}>
             Download
