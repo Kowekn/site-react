@@ -170,21 +170,21 @@ const deleta = (e, setValue) => {
 }}
     {/*Titulo,                      required       type      pattern                                                codigo  State         setState        max-size */}
 const registros = 
-[ ["Nome de Registro",             "required",   "text",   false,                                                     1,   Nome,         setNome,        "255" ],
-  ["E-mail",                       "required",   "email",  "[A-Za-z0-9]+@{1}[A-Za-z]+[\.]{1}[c]{1}[o]{1}[m]{1}",      2,   Email,     setEmail,           "" ],
-  ["Endereço",                      "unrequired", "text",   false,                                                     3,   Endereco,  setEndereco,       "" ],
-  ["Cidade",                        "unrequired",  "text",   false,                                                    4,   Cidade,       setCidade,      "" ],
+[ ["Nome de Registro",             "required",   "",   false,                                                     1,   Nome,         setNome,        "255" ],
+  ["E-mail",                       "required",   "",  "[A-Za-z0-9]+@{1}[A-Za-z]+[\.]{1}[c]{1}[o]{1}[m]{1}",      2,   Email,     setEmail,           "" ],
+  ["Endereço",                      "unrequired", "",   false,                                                     3,   Endereco,  setEndereco,       "" ],
+  ["Cidade",                        "unrequired", "",   false,                                                    4,   Cidade,       setCidade,      "" ],
   ["Estado",                        "unrequired",  "",       false,                                                     ,       ,                  ,      "" ],
   ["Número de Licenças",            "unrequired",  "",       false,                                                     ,       ,                  ,      "" ],
   ["Como conheceu o componente",    "unrequired", "",       false,                                                      , ComoInput,   setComoInput,      "" ],
-  ["CEP",                           "unrequired", "text",   "[0-9]{5}[-]{1}[0-9]{3}",                                  8,   CEP,          setCEP,         "9" ],
-  ["CNPJ/CPF",                      "unrequired", "text",   "[1-9]{1}[0-9]{2}[\.]?[0-9]{3}[\.]?[0-9]{3}[-]?[0-9]{2}",  9,   CPF,          setCPF,         "14" ],
-  ["Inscrição Estadual",            "unrequired", "text",   false,                                                    10,   Inscr,        setInscr,       "" ],
-  ["Telefone",                      "unrequired", "tel",    "[(]{1}[0-9]{2}[)]{1}[0-9]{4,5}[-]{1}[0-9]{4}",           11,   Tel,          setTel,         "14" ]];  
+  ["CEP",                           "unrequired", "",   "[0-9]{5}[-]{1}[0-9]{3}",                                  8,   CEP,          setCEP,         "9" ],
+  ["CNPJ/CPF",                      "unrequired", "",   "[1-9]{1}[0-9]{2}[\.]?[0-9]{3}[\.]?[0-9]{3}[-]?[0-9]{2}",  9,   CPF,          setCPF,         "14" ],
+  ["Inscrição Estadual",            "unrequired", "",   false,                                                    10,   Inscr,        setInscr,       "" ],
+  ["Telefone",                      "unrequired", "",    "[(]{1}[0-9]{2}[)]{1}[0-9]{4,5}[-]{1}[0-9]{4}",           11,   Tel,          setTel,         "14" ]];  
 
 
-  const RegistroTextCssInput = `relative peer  block    border border-accent  placeholder-shown:border-main focus:outline outline-[2px] outline-offset-[-3px] outline-main  focus:border-accent
-  w-[100%]   border-4  bg-light rounded pt-4 pl-4 pb-2 font-semibold`
+  const RegistroTextCssInput = `relative peer  block bg-light   border-4 border-accent  placeholder-shown:border-main focus:outline outline-[2px] outline-offset-[-3px] outline-main  focus:border-accent
+  w-[100%]   border-4   rounded pt-4 pl-4 pb-2 font-semibold`
 
 const RegistroTextCssSpan = `absolute top-[30%] left-2 pl-[10px] pr-[10px]  font-semibold   rounded-lg    font-semibold
  bg-light   origin-top-left transition-transform ease-in leading-tight   
@@ -194,36 +194,36 @@ const RegistroTextCssDiv = `w-[100%] min-w-[400px] max-w-[600px] mb-2 mt-2`
 
 const RegistroHR = `w-[100%] min-w-[400px] max-w-[600px] border-main relative bottom-4 left-0 bottom-2 mt-8`
 
-const Estados =  [["AC","Acre"],             ["AL","Alagoas"],               ["AP","Amapá"],                  ["AM","Amazonas"],    
-                  ["BA","Bahia"],            ["CE","Ceará"],                 ["ES","Espirito Santo"],         ["GO","Goiânia"],               
-                  ["MA","Maranhão"],         ["MT","Mato Grosso"],           ["MS","Mato Grosso do Sul"],     ["MG","Minas Gerais"],          
-                  ["PA","Pará"],             ["PB","Paraíba"],               ["PR","Paraná"],                 ["PE","Pernambuco"],            
-                  ["PI","Piauí"],            ["RJ","Rio de Janeiro"],        ["RN","Rio Grande do Norte"],    ["RS","Rio Grande so Sul"],     
-                  ["RO","Rondônia"],         ["RR","Roraima"],               ["SC","Santa Catarina"],         ["SP","São Paulo"],             
-                  ["SE","Serjipe"],          ["TO","Tocantins"],
-                  ["XX", "Outro país"]]
+const Estados =  [[`AC`,`Acre`],             [`AL`,`Alagoas`],               [`AP`,`Amapá`],                  [`AM`,`Amazonas`],    
+                  [`BA`,`Bahia`],            [`CE`,`Ceará`],                 [`ES`,`Espirito Santo`],         [`GO`,`Goiânia`],               
+                  [`MA`,`Maranhão`],         [`MT`,`Mato Grosso`],           [`MS`,`Mato Grosso do Sul`],     [`MG`,`Minas Gerais`],          
+                  [`PA`,`Pará`],             [`PB`,`Paraíba`],               [`PR`,`Paraná`],                 [`PE`,`Pernambuco`],            
+                  [`PI`,`Piauí`],            [`RJ`,`Rio de Janeiro`],        [`RN`,`Rio Grande do Norte`],    [`RS`,`Rio Grande so Sul`],     
+                  [`RO`,`Rondônia`],         [`RR`,`Roraima`],               [`SC`,`Santa Catarina`],         [`SP`,`São Paulo`],             
+                  [`SE`,`Serjipe`],          [`TO`,`Tocantins`],
+                  [`XX`, `Outro país`]]
 
 const updatedEstados = Estados?.map((registro, index)=>{
-  return <option value={Estados[index][0]} className={`text-semibold`}><p id="p">{Estados[index][1]}</p></option>
+  return <option value={Estados[index][0]} className={`font-semibold text-main`}>{Estados[index][1]}</option>
 })
 
 const Conheceu = [ 
-["indicacao",     "Indicação de amigo"],
-["banner",        "Banner"],
-["anuncio",       "Anúncio"],
-["vbmania",       "VBMania"],
-["busca",         "Busca pela internet"],
-["superdown",     "SuperDownloads"],
-["baixaki",       "Baixaki"],
-["outro",         "Outro (Especifique)"]]
+[`indicacao`,     `Indicação de amigo`],
+[`banner`,        `Banner`],
+[`anuncio`,       `Anúncio`],
+[`vbmania`,       `VBMania`],
+[`busca`,         `Busca pela internet`],
+[`superdown`,     `SuperDownloads`],
+[`baixaki`,       `Baixaki`],
+[`outro`,         `Outro (Especifique)`]]
 
 const updatedConheceu = Conheceu?.map((item, index)=>{
-  return <option value={Conheceu[index][0]}  >{Conheceu[index][1]}</option>
+  return <option value={Conheceu[index][0]} className="font-semibold" >{Conheceu[index][1]}</option>
 })
 
-const [ComoCSS, setComoCSS] = useState(`bg-light ml-2 pl-2 pr-2 p-1 border-4 border-transparent outline-main rounded`); 
+const [ComoCSS, setComoCSS] = useState(`bg-light ml-2 pl-2 pr-2 p-1 focus:border-transparent focus:ring-0 border-4 border-transparent outline-main rounded`); 
 const updateComo = (item) => {
-  setComoCSS(`bg-light ml-2 pl-2 pr-2 p-1 border-4 border-transparent outline-main  rounded`)
+  setComoCSS(`bg-light ml-2 pl-2 pr-2 p-1 border-4 focus:ring-0 border-4 focus:border-transparent border-transparent outline-main  rounded`)
   if(item == "outro"){
     setComo(false);
   }else{
@@ -231,7 +231,7 @@ const updateComo = (item) => {
     setComoInput("")
   }
   if(item != "selecione"){
-    setComoCSS(`bg-light ml-2 pl-2 pr-2 p-1 border border-4 border-accent outline-main  rounded`)
+    setComoCSS(`bg-light ml-2 pl-2 pr-2 p-1 focus:ring-0  border-4 border-accent active:border-accent focus:border-accent outline-main  rounded`)
   }
 
 }
@@ -241,19 +241,18 @@ const updateComoInput = (item) => {
   
 }
 
-const [EstadoCSS, setEstadoCSS] = useState(`apearance-none font-semibold bg-light pl-4 pr-6 ml-2 p-1 border-4 border-transparent outline-main rounded` );
+const [EstadoCSS, setEstadoCSS] = useState(`apearance-none font-semibold bg-light pl-4 pr-6 ml-2 p-1 focus:ring-0 ring-0 border-4 focus:border-transparent border-transparent outline-main rounded` );
 
 
 const updateEstados = (e) => {
   setEstado(e)
   
-  setEstadoCSS(`apearance-none font-semibold bg-light pl-4 pr-6 ml-2 p-1  border-4 border-transparent  outline-main  rounded`)
+  setEstadoCSS(`apearance-none font-semibold bg-light pl-4 pr-6 ml-2 p-1 focus:ring-0 ring-0  border-4 focus:border-transparent border-transparent outline-4 outline-main   rounded`)
   if(e != "selecione"){
-    setEstadoCSS(`apearance-none font-semibold bg-light ml-2 pl-2 pr-2 p-1 border border-4 border-accent outline-main  rounded`)
+    setEstadoCSS(`apearance-none font-semibold bg-light ml-2 pl-2 pr-2 p-1 focus:ring-0  ring-0 border-4 focus:border-accent border-accent border-4 outline-4 outline-main  rounded`)
   }
 
 }
-
 
 
 
@@ -261,11 +260,11 @@ const updatedRegistros = registros?.map((registro, index)=>{
   if(registros[index][0] == "Estado"){
     return <div ><hr className={`w-[100%] min-w-[400px] max-w-[600px] border-main relative bottom-4 left-0 bottom-4`}></hr>
             <div className={`block relative left-0 pl-5 mt-1 `}>
-            <p id="p" className={`font-semibold `}>
-            <label className={`font-semibold `}>Estado:</label>
-            <select name="estado" title="Estados" value={Estado} onChange={e => updateEstados(e.target.value)}
+            
+            <p id="p"><label className={`font-semibold `}>Estado:</label></p>
+            <p id="p" className={`font-semibold `}><select name="estado" title="Estados" value={Estado} onChange={e => updateEstados(e.target.value)}
             className={EstadoCSS}>
-            <option selected value="selecione" className={` text-semibold`}>--Selecione--</option>
+            <option selected value="selecione" className={` font-semibold`}>--Selecione--</option>
               {updatedEstados}
             </select> </p></div><hr className={RegistroHR}></hr>
             </div>;
@@ -275,8 +274,8 @@ const updatedRegistros = registros?.map((registro, index)=>{
                 <p id="p">
                 <label className={` font-semibold `}>Número de Licenças:</label>
                 <select  name="licencas"
-                  className={`bg-light ml-2 pl-2 pr-2 p-1 border border-4 border-accent outline-main rounded`} >
-                <option value="1">1</option>
+                  className={`bg-light ml-2 pl-2 pr-2 p-1  border-4 border-accent outline-main rounded`} >
+                <option value="1" className="font-semibold">1</option>
       
     </select></p></div><hr className={RegistroHR}></hr></div>;
   }
@@ -287,10 +286,10 @@ const updatedRegistros = registros?.map((registro, index)=>{
     <label className={`block  font-semibold`}>Como conheceu o componente:</label>
     <select name="fonte" id="componente" onChange={event => updateComo(event.target.value)}
       className={ComoCSS}  >
-      <option selected value="selecione"><p id="p">--Selecione--</p></option>
+      <option selected value="selecione" className="font-semibold focus:ring-0"><p id="p">--Selecione--</p></option>
     {updatedConheceu}
     </select>
-    <input type="text"  id="outro"  disabled={Como}  value={ComoInput} onChange={e => setComoInput(e.target.value)}  onFocus={event =>updateComoInput(event.target.value)} onKeyDown={e => deleta(e, registros[index][6])}
+    <input   id="outro"  disabled={Como}  value={ComoInput} onChange={e => setComoInput(e.target.value)}  onFocus={event =>updateComoInput(event.target.value)} onKeyDown={e => deleta(e, registros[index][6])}
         className={`rounded bg-light pl-2 p-1 pt-[5px] border-4 border-transparent focus:border-accent focus:outline outline-2 outline-offset-[-3px] font-semibold focus:outline-main`} placeholder="Especifique" maxLength={30}></input>
     </p></div><hr className={RegistroHR}></hr></div>;
   }

@@ -38,8 +38,8 @@ const perguntas =
  /*6 */   
  [`Como exportar o relatório para o formato PDF?`,
     <p id="p">O componente não faz a exportação diretamente, mas você pode instalar um driver virtual de impressora que faça isso. 
-    Existem drivers gratuitos e pagos. Você pode visitar a página do <a target="_blank" id="a" href="http://www.pdf995.com"  >PDF995</a> 
-    que disponibiliza um driver gratuito. Após instalar o driver selecione-o como se fosse uma impressora comum 
+    Existem drivers gratuitos e pagos. Você pode visitar a página do <a target="_blank" id="a" href="http://www.pdf995.com"  >PDF995</a> que 
+    disponibiliza um driver gratuito. Após instalar o driver selecione-o como se fosse uma impressora comum 
     e será aberta uma janela pedindo o nome do arquivo a ser gerado. </p>],
  /*7 */   
  [`Quando o relatório é chamado apresenta o erro "Erro 401 - Application defined or object defined error" 

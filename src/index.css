@@ -10,12 +10,12 @@
 }
 
 .light{
-  --main: 3, 5, 15;
-  --dark: 163, 183, 187;
-  --light: 192, 204, 209;
-  --accent: 10, 52, 129;
-  --active: 56, 62, 63;
-  --hover: 92, 102, 103;
+  --main: 3, 7, 15;
+  --dark: 163, 171, 187;
+  --light: 192, 198, 209;
+  --accent: 45, 75, 129;
+  --active: 29, 36, 63;
+  --hover: 36, 59, 103;
   
 }
 
@@ -120,6 +120,14 @@ input::placeholder, textarea::placeholder {
   line-height: var(--espaco-linha);
   -webkit-font-smoothing: auto;
   -moz-osx-font-smoothing: auto;
+
+  
+}
+#a:hover{
+  color: rgba(var(--hover))
+}
+#a:active{
+  color: rgba(var(--active))
 }
 
 

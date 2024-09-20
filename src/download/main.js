@@ -41,14 +41,14 @@ const TableCSS =    `w-[600px] self-center  mb-4 bg-gradient-to-t from-light to-
 const TheadCSS = `border border-dark bg-dark  `;
 
 const TbodyCSS = `border-2 border-transparent  pl-2 bg-inherit `;
-const TanchorCSS = `active:text-cyan-200 hover:text-stone-50`;
+const TanchorCSS = `active:text-active hover:text-hover`;
 
-const download = (classe, enter, href, titulo) => {
-    return <a id="a" className={classe} href={href} download={titulo}>{enter}</a> 
+const download = ( enter, href, titulo) => {
+    return <a id="a" className={TanchorCSS} href={href} download={titulo}>{enter}</a> 
 }
 
-const pdf = (classe, enter, href) => {
-    return <a id="a" className={classe} href={href} target="_blank" >{enter}</a>
+const pdf = ( enter, href) => {
+    return <a id="a" className={TanchorCSS} href={href} target="_blank" >{enter}</a>
 }
 
 const tabela = (itens) =>{ return itens.map((item, index) =>{
@@ -68,14 +68,14 @@ const tabela = (itens) =>{ return itens.map((item, index) =>{
         return <tbody>
             <tr>
                 <td className={TbodyCSS}><p id="p">{itens[index][0]}</p></td>
-                <td className={TbodyCSS}>{download(TanchorCSS,itens[index][1], itens[index][2], itens[index][3])}</td>
+                <td className={TbodyCSS}>{download(itens[index][1], itens[index][2], itens[index][3])}</td>
             </tr>
         </tbody>
     }else {
         return <tbody>
         <tr>
             <td className={TbodyCSS}><p id="p">{itens[index][0]}</p></td>
-            <td className={TbodyCSS}>{pdf(TanchorCSS,itens[index][1], itens[index][2])}</td>
+            <td className={TbodyCSS}>{pdf(itens[index][1], itens[index][2])}</td>
         </tr>
     </tbody>
     }

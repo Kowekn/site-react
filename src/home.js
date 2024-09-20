@@ -26,7 +26,7 @@ const itensCSS = [
 
   `flex flex-col ml-5 w-[68%] max-md:ml-0 max-md:w-full  `,
 
-  `active:text-neutral-400 hover:text-stone-50 text-2xl font-semibold tracking-tight 
+  `active:text-active hover:text-hover text-2xl font-semibold tracking-tight 
                      leading-7 text-maintext-start  `,
 
   `mt-2 text-base leading-6 text-main `,

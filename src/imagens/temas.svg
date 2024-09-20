@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="40.233242mm"
+   height="18.588257mm"
+   viewBox="0 0 40.233242 18.588255"
+   version="1.1"
+   id="svg1"
+   xmlnsSvg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlnsSvg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs1" />
+  <rect
+     style="fill:rgba(var(--accent));fill-rule:evenodd;stroke:rgba(var(--accent));stroke-width:0.40169;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:3.4;paint-order:fill markers stroke"
+     id="accent"
+     width="7.53581"
+     height="7.53581"
+     x="2.8466783"
+     y="5.4925117" />
+  <rect
+     style="fill:rgba(var(--light));fill-rule:evenodd;stroke:rgba(var(--light));stroke-width:0.40169;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:3.4;paint-order:fill markers stroke"
+     id="light"
+     width="7.53581"
+     height="7.53581"
+     x="29.834177"
+     y="5.4925117" />
+  <rect
+     style="fill:rgba(var(--dark));fill-rule:evenodd;stroke:rgba(var(--dark));stroke-width:0.40169;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:3.4;paint-order:fill markers stroke"
+     id="dark"
+     width="7.53581"
+     height="7.53581"
+     x="11.842511"
+     y="5.4925117" />
+  <rect
+     style="fill:rgba(var(--main));fill-rule:evenodd;stroke:rgba(var(--main));stroke-width:0.40169;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:3.4;paint-order:fill markers stroke"
+     id="main"
+     width="7.53581"
+     height="7.53581"
+     x="20.838345"
+     y="5.4925117" />
+</svg>

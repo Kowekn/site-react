@@ -12,16 +12,16 @@ function Opiniao_form(){
 
     {/*Titulo,                          required       type      pattern                                                codigo  State         setState        max-size     placeholder*/}
     const registros =     
-[   ["Nome de Registro",                "required",   "text",   false,                                                     1,   Nome,         setNome,        "255",      "Anônimo"],
-    ["E-mail",                          "required",   "email",  "[A-Za-z0-9]+@{1}[A-Za-z0-9]+[\.]{1}[c]{1}[o]{1}[m]{1}",                                                        2,   Email,     setEmail,          "",         " "],
+[   ["Nome de Registro",                "required",   "",   false,                                                     1,   Nome,         setNome,        "255",      "Anônimo"],
+    ["E-mail",                          "required",   "",  "[A-Za-z0-9]+@{1}[A-Za-z0-9]+[\.]{1}[c]{1}[o]{1}[m]{1}",                                                        2,   Email,     setEmail,          "",         " "],
     ["Como conheceu o componente",      "unrequired", "",       false,                                                         , ComoInput,   setComoInput,      "",         " "]
     
 ]
-const RegistroTextCssInput = `relative peer  block   bg-light border  placeholder-shown:border-main border-accent  focus:outline outline-[2px] outline-offset-[-3px] outline-main  focus:border-accent
+const RegistroTextCssInput = `relative peer  block   bg-light   placeholder-shown:border-main border-accent  focus:outline outline-[2px] outline-offset-[-3px] outline-main  focus:border-accent
        w-[100%]   border-4   rounded pt-4 pl-4 pb-2 font-semibold `
 
 const RegistroTextCssSpan = `absolute top-[30%] left-2 pl-[10px] pr-[10px]  font-semibold   rounded-lg    font-semibold
-      bg-light  bg-contain   origin-top-left transition-transform ease-in leading-tight   
+      bg-light    origin-top-left transition-transform ease-in leading-tight   
       peer-focus:translate-y-[-100%] peer-focus:scale-75 peer-[:not(:placeholder-shown)]:translate-y-[-100%] peer-[:not(:placeholder-shown)]:scale-75 peer-focus:text-accent`
 
 const RegistroTextCssDiv = `w-[100%] min-w-[400px] max-w-[600px] mb-2 mt-2 `
@@ -45,11 +45,11 @@ const deleta = (e, setValue) => {
     ["outro",         "Outro (Especifique)"]]
     
     const updatedConheceu = Conheceu?.map((item, index)=>{
-      return <option value={Conheceu[index][0]}  ><p id="p">{Conheceu[index][1]}</p></option>
+      return <option value={Conheceu[index][0]} className="font-semibold" ><p id="p">{Conheceu[index][1]}</p></option>
     })
-    const [ComoCSS, setComoCSS] = useState(`bg-light ml-2 pl-2 pr-2 p-1 border-4 border-transparent outline-main rounded`); 
+    const [ComoCSS, setComoCSS] = useState(`bg-light ml-2 pl-2 pr-2 p-1 border-4 focus:ring-0 ring-0 border-transparent focus:border-transparent outline-main rounded`); 
     const updateComo = (item) => {
-      setComoCSS(`bg-light ml-2 pl-2 pr-2 p-1 border-4 border-transparent outline-main rounded`)
+      setComoCSS(`bg-light ml-2 pl-2 pr-2 p-1 border-4 focus:border-transparent focus:ring-0  ring-0 border-transparent outline-main rounded`)
       if(item == "outro"){
         setComo(false);
       }else{
@@ -57,7 +57,7 @@ const deleta = (e, setValue) => {
         setComoInput("")
       }
       if(item != "selecione"){
-        setComoCSS(`bg-light ml-2 pl-2 pr-2 p-1 border border-4 border-accent outline-main rounded`)
+        setComoCSS(`bg-light ml-2 pl-2 pr-2 p-1 focus:ring-0 ring-0  border-4 focus:border-accent border-accent outline-main rounded`)
       }
     
     }
@@ -79,10 +79,10 @@ const deleta = (e, setValue) => {
             <label className="font-semibold block ">Como conheceu o componente:</label>
             <select name="fonte" id="componente" onChange={event => updateComo(event.target.value)}
               className={ComoCSS}  >
-              <option selected value="selecione"><p id="p">--Selecione--</p></option>
+              <option selected value="selecione" className="font-semibold"><p id="p">--Selecione--</p></option>
             {updatedConheceu}
             </select>
-            <input type="text"  id="outro"  disabled={Como}  value={ComoInput} onChange={e => setComoInput(e.target.value)}  onFocus={event =>updateComoInput(event.target.value)} onKeyDown={e => deleta(e, registros[index][6])}
+            <input type=""  id="outro"  disabled={Como}  value={ComoInput} onChange={e => setComoInput(e.target.value)}  onFocus={event =>updateComoInput(event.target.value)} onKeyDown={e => deleta(e, registros[index][6])}
                 className={`rounded bg-light pl-2 p-1 pt-[5px] border-4 border-transparent focus:border-accent focus:outline outline-2 outline-offset-[-3px] font-semibold focus:outline-main`} placeholder="Especifique" maxLength={30}></input>
             </p></div><hr className={RegistroHR}></hr></div>;
           }
@@ -106,7 +106,7 @@ const deleta = (e, setValue) => {
     ["Objeto Printer",  "Printer"],
     ["Outras",          "Outras"]
 ]
-    const CheckboxCSS = `peer accent-accent`
+    const CheckboxCSS = `peer apearance-none accent-accent`
 
     const updatedRegistrosCheckbox = registrosCheckbox?.map((registro, index) => {
         return(
@@ -148,7 +148,7 @@ const deleta = (e, setValue) => {
                 {valoresRadio?.map((x,y) => {
                     if(valoresRadio[index][y]){
                     return <div className="">
-                <input type="radio" value={valoresRadio[index][y]} name={registrosRadio[index][1]} className={`peer accent-accent border-main border-2 rounded-full `}></input> 
+                <input type="radio" value={valoresRadio[index][y]} name={registrosRadio[index][1]} className={` peer bg-dark accent-accent ring-offset-gray-800 `}></input> 
                 <label className={` font-semibold pl-2 peer-checked:text-accent   `} >{valoresRadio[index][y]}</label>
             </div>}
                 })}

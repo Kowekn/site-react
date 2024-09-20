@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import {ReactComponent as Logo} from './imagens/logo_joinbit_visual_reportx.svg'
 import * as consts from "./css_consts";
 import { useState } from "react";
-
+import {ReactComponent as Temas} from './imagens/temas.svg'
 
 
 
@@ -62,7 +62,18 @@ const updatedOptions = options?.map((item, index) => {
   )
 })
 
-const selectCSS = `apearance-none p-2 border-2 border-light rounded-lg bg-light text-main font-semibold outline-accent focus:border-main`
+const selectCSS = `apearance-none peer ring-0 focus:ring-0 p-2 border-2 border-light rounded-lg bg-light 
+text-main font-semibold outline-accent focus:border-main 
+
+`
+
+const ButtonTemasCSS = `border-2 place-items-center rounded-lg 
+justify-items-center justify-center content-center items-center place-content-center place-items-center`
+
+
+const temasbotao = options.map((item, index)=>{
+ return <button className={ButtonTemasCSS} value={options[index][0]} onClick={e => updateTema(e.currentTarget.value) }><Temas className={options[index][0]}></Temas></button>
+})
 
     return(
 
@@ -73,11 +84,21 @@ const selectCSS = `apearance-none p-2 border-2 border-light rounded-lg bg-light 
         </Logo></div></Link>
         {/* header */}
         <div className={`flex gap-4 items-center my-auto max-md:flex-wrap`}>
-        <p id="p" className="font-semibold"><select onChange={e => updateTema(e.target.value)}  className={selectCSS}>
+        <div>
+        <select onChange={e => updateTema(e.target.value)} id="p"  className={selectCSS}>
         {updatedOptions}
         
-        </select></p>
-         <Link to="/download"><div id="p" className={`active:text-active hover:text-active hover:bg-light active:bg-hover justify-center self-stretch 
+        </select>
+        <div className={`  relative bottom-0 left-20  w-full  z-50
+          peer-focus:visible hover:visible active:visible 
+          `}><div className={`absolute right-0   grid  w-max h-[200px] bg-light p-4  grid-row-2 grid-cols-2 gap-4
+           `}
+          >
+              {temasbotao}
+              </div>
+          </div>
+          </div>
+         <Link to="/download"><div id="p" className={`active:text-active hover:text-hover hover:bg-light active:bg-dark justify-center self-stretch 
          p-2 bg-dark border border-solid rounded border-main 
          text-main`}>
             Download
