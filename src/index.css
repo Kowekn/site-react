@@ -138,3 +138,68 @@ input::placeholder, textarea::placeholder {
 #in {
   font-size: 1.06rem;
 }
+
+
+
+
+[type='checkbox'], [type='radio'] {
+  appearance: none;
+  padding: 0;
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+  display: inline-block;
+  vertical-align: middle;
+  background-origin: border-box;
+  -webkit-user-select: none;
+  user-select: none;
+  flex-shrink: 0;
+  height: 1rem;
+  width: 1rem;
+  color: rgba(var(--accent));
+  background-color: rgba(var(--light));
+  border-color: rgba(var(--main));
+  border-width: 2px;
+  --tw-shadow: 0 0 #0000;
+}
+[type='checkbox']:focus, [type='radio']:focus {
+  outline-style: ridge;
+  outline-color: rgba(var(--accent));
+  outline-width: 3px;
+  outline-offset: 2px;
+  box-shadow: rgba(var(--accent));
+}
+
+[type='text'], [type='email'], [type='url'], [type='password'], [type='number'], [type='date'], [type='datetime-local'], [type='month'], [type='search'], [type='tel'], [type='time'], [type='week'], [multiple], textarea, select {
+  appearance: ;
+  background-color: ;
+  border-color: ;
+  border-width: ;
+  border-radius: ;
+  padding-top: ;
+  padding-right: ;
+  padding-bottom: ;
+  padding-left: ;
+  font-size: ;
+  line-height: ;
+  --tw-shadow: ;
+  outline-style: ;
+  outline-color: ;
+  outline-width: ;
+  outline-offset: ;
+  box-shadow: ;
+  
+}
+[type='text']:focus, [type='email']:focus, [type='url']:focus, [type='password']:focus, [type='number']:focus, [type='date']:focus, [type='datetime-local']:focus, [type='month']:focus, [type='search']:focus, [type='tel']:focus, [type='time']:focus, [type='week']:focus, [multiple]:focus, textarea:focus, select:focus {
+  outline-style: ;
+  outline-color: ;
+  outline-width: ;
+  outline-offset: ;
+  --tw-ring-inset: ;
+  --tw-ring-offset-width: ;
+  --tw-ring-offset-color: ;
+  --tw-ring-color: ;
+  --tw-ring-offset-shadow: ;
+  --tw-ring-shadow: ;
+  box-shadow: ;
+  border-color: ;
+}

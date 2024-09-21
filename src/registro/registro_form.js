@@ -2,7 +2,7 @@ import React from "react";
 import Side_div from "../side_div";
 import { useState } from "react";
 import {ReactComponent as BrasilEscuro} from "../imagens/brasil_join.svg";
-
+import 'flowbite';
 
 function Registro_form() {
 
@@ -170,25 +170,27 @@ const deleta = (e, setValue) => {
 }}
     {/*Titulo,                      required       type      pattern                                                codigo  State         setState        max-size */}
 const registros = 
-[ ["Nome de Registro",             "required",   "",   false,                                                     1,   Nome,         setNome,        "255" ],
-  ["E-mail",                       "required",   "",  "[A-Za-z0-9]+@{1}[A-Za-z]+[\.]{1}[c]{1}[o]{1}[m]{1}",      2,   Email,     setEmail,           "" ],
-  ["Endereço",                      "unrequired", "",   false,                                                     3,   Endereco,  setEndereco,       "" ],
-  ["Cidade",                        "unrequired", "",   false,                                                    4,   Cidade,       setCidade,      "" ],
+[ ["Nome de Registro",             "required",   "text",   false,                                                     1,   Nome,         setNome,        "255" ],
+  ["E-mail",                       "required",   "email",  "[A-Za-z0-9]+@{1}[A-Za-z]+[\.]{1}[c]{1}[o]{1}[m]{1}",      2,   Email,     setEmail,           "" ],
+  ["Endereço",                      "unrequired", "text",   false,                                                     3,   Endereco,  setEndereco,       "" ],
+  ["Cidade",                        "unrequired", "text",   false,                                                    4,   Cidade,       setCidade,      "" ],
   ["Estado",                        "unrequired",  "",       false,                                                     ,       ,                  ,      "" ],
   ["Número de Licenças",            "unrequired",  "",       false,                                                     ,       ,                  ,      "" ],
   ["Como conheceu o componente",    "unrequired", "",       false,                                                      , ComoInput,   setComoInput,      "" ],
-  ["CEP",                           "unrequired", "",   "[0-9]{5}[-]{1}[0-9]{3}",                                  8,   CEP,          setCEP,         "9" ],
-  ["CNPJ/CPF",                      "unrequired", "",   "[1-9]{1}[0-9]{2}[\.]?[0-9]{3}[\.]?[0-9]{3}[-]?[0-9]{2}",  9,   CPF,          setCPF,         "14" ],
-  ["Inscrição Estadual",            "unrequired", "",   false,                                                    10,   Inscr,        setInscr,       "" ],
-  ["Telefone",                      "unrequired", "",    "[(]{1}[0-9]{2}[)]{1}[0-9]{4,5}[-]{1}[0-9]{4}",           11,   Tel,          setTel,         "14" ]];  
+  ["CEP",                           "unrequired", "text",   "[0-9]{5}[-]{1}[0-9]{3}",                                  8,   CEP,          setCEP,         "9" ],
+  ["CNPJ/CPF",                      "unrequired", "text",   "[1-9]{1}[0-9]{2}[\.]?[0-9]{3}[\.]?[0-9]{3}[-]?[0-9]{2}",  9,   CPF,          setCPF,         "14" ],
+  ["Inscrição Estadual",            "unrequired", "text",   false,                                                    10,   Inscr,        setInscr,       "" ],
+  ["Telefone",                      "unrequired", "tel",    "[(]{1}[0-9]{2}[)]{1}[0-9]{4,5}[-]{1}[0-9]{4}",           11,   Tel,          setTel,         "14" ]];  
 
 
-  const RegistroTextCssInput = `relative peer  block bg-light   border-4 border-accent  placeholder-shown:border-main focus:outline outline-[2px] outline-offset-[-3px] outline-main  focus:border-accent
+  const RegistroTextCssInput = `relative peer  block bg-light   border-4 border-accent  placeholder-shown:border-main 
+  focus:outline focus:outline-[2px] focus:outline-offset-[-3px] focus:outline-main  focus:border-accent
   w-[100%]   border-4   rounded pt-4 pl-4 pb-2 font-semibold`
 
 const RegistroTextCssSpan = `absolute top-[30%] left-2 pl-[10px] pr-[10px]  font-semibold   rounded-lg    font-semibold
- bg-light   origin-top-left transition-transform ease-in leading-tight   
- peer-focus:translate-y-[-100%] peer-focus:scale-75 peer-[:not(:placeholder-shown)]:translate-y-[-100%] peer-[:not(:placeholder-shown)]:scale-75 peer-focus:text-accent`
+ bg-light   origin-top-left transition-transform ease-in leading-tight    
+ peer-focus:translate-y-[-100%] peer-focus:scale-75 peer-[:not(:placeholder-shown)]:translate-y-[-100%] 
+ peer-[:not(:placeholder-shown)]:scale-75 peer-focus:text-accent`
 
 const RegistroTextCssDiv = `w-[100%] min-w-[400px] max-w-[600px] mb-2 mt-2`
 
@@ -221,9 +223,9 @@ const updatedConheceu = Conheceu?.map((item, index)=>{
   return <option value={Conheceu[index][0]} className="font-semibold" >{Conheceu[index][1]}</option>
 })
 
-const [ComoCSS, setComoCSS] = useState(`bg-light ml-2 pl-2 pr-2 p-1 focus:border-transparent focus:ring-0 border-4 border-transparent outline-main rounded`); 
+const [ComoCSS, setComoCSS] = useState(`bg-light ml-2 p-2 text-[1.2rem] focus:border-transparent focus:ring-0 border-4 border-transparent outline-main rounded`); 
 const updateComo = (item) => {
-  setComoCSS(`bg-light ml-2 pl-2 pr-2 p-1 border-4 focus:ring-0 border-4 focus:border-transparent border-transparent outline-main  rounded`)
+  setComoCSS(`bg-light ml-2 p-2 text-[1.2rem] border-4 focus:ring-0 border-4 focus:border-transparent border-transparent outline-main  rounded`)
   if(item == "outro"){
     setComo(false);
   }else{
@@ -231,7 +233,7 @@ const updateComo = (item) => {
     setComoInput("")
   }
   if(item != "selecione"){
-    setComoCSS(`bg-light ml-2 pl-2 pr-2 p-1 focus:ring-0  border-4 border-accent active:border-accent focus:border-accent outline-main  rounded`)
+    setComoCSS(`bg-light ml-2 p-2 text-[1.2rem] focus:ring-0  border-4 border-accent active:border-accent focus:border-accent outline-main  rounded`)
   }
 
 }
@@ -241,15 +243,15 @@ const updateComoInput = (item) => {
   
 }
 
-const [EstadoCSS, setEstadoCSS] = useState(`apearance-none font-semibold bg-light pl-4 pr-6 ml-2 p-1 focus:ring-0 ring-0 border-4 focus:border-transparent border-transparent outline-main rounded` );
+const [EstadoCSS, setEstadoCSS] = useState(`apearance-none text-[1.2rem] font-semibold bg-light pl-4 pr-6 ml-2 p-1 focus:ring-0 ring-0 border-4 focus:border-transparent border-transparent outline-main rounded` );
 
 
 const updateEstados = (e) => {
   setEstado(e)
   
-  setEstadoCSS(`apearance-none font-semibold bg-light pl-4 pr-6 ml-2 p-1 focus:ring-0 ring-0  border-4 focus:border-transparent border-transparent outline-4 outline-main   rounded`)
+  setEstadoCSS(`apearance-none text-[1.2rem] font-semibold bg-light pl-4 pr-6 ml-2 p-1 focus:ring-0 ring-0  border-4 focus:border-transparent border-transparent outline-4 outline-main   rounded`)
   if(e != "selecione"){
-    setEstadoCSS(`apearance-none font-semibold bg-light ml-2 pl-2 pr-2 p-1 focus:ring-0  ring-0 border-4 focus:border-accent border-accent border-4 outline-4 outline-main  rounded`)
+    setEstadoCSS(`apearance-none text-[1.2rem] font-semibold bg-light ml-2 pl-2 pr-2 p-1 focus:ring-0  ring-0 border-4 focus:border-accent border-accent border-4 outline-4 outline-main  rounded`)
   }
 
 }
@@ -274,7 +276,7 @@ const updatedRegistros = registros?.map((registro, index)=>{
                 <p id="p">
                 <label className={` font-semibold `}>Número de Licenças:</label>
                 <select  name="licencas"
-                  className={`bg-light ml-2 pl-2 pr-2 p-1  border-4 border-accent outline-main rounded`} >
+                  className={`bg-light ml-2 pl-2 pr-2 p-1 text-[1.2rem] border-4 border-accent outline-main rounded`} >
                 <option value="1" className="font-semibold">1</option>
       
     </select></p></div><hr className={RegistroHR}></hr></div>;

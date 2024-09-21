@@ -54,26 +54,37 @@ const options = [
   [``, ``]
 ]
 
-const optionsCSS = `font-semibold`
 
-const updatedOptions = options?.map((item, index) => {
-  return (
-    <option value={options[index][0]} className={optionsCSS}>{options[index][1]}</option>
-  )
-})
 
-const selectCSS = `apearance-none peer ring-0 focus:ring-0 p-2 border-2 border-light rounded-lg bg-light 
-text-main font-semibold outline-accent focus:border-main 
-
+const ButtonTemasCSS = `border-[3px] border-main rounded-lg p-2 pl-4 content-start w-full
 `
-
-const ButtonTemasCSS = `border-2 place-items-center rounded-lg 
-justify-items-center justify-center content-center items-center place-content-center place-items-center`
+const RadioTemasCSS = ``
 
 
-const temasbotao = options.map((item, index)=>{
- return <button className={ButtonTemasCSS} value={options[index][0]} onClick={e => updateTema(e.currentTarget.value) }><Temas className={options[index][0]}></Temas></button>
+const TemasBotao = options.map((item, index)=>{
+  
+ return <div className={ButtonTemasCSS}>
+ <input type="radio" id={"tema"+index} name="tema" onFocus={e => updateTema(options[index][0])} className={RadioTemasCSS} 
+ ></input>
+ <label for={"tema"+index}  onClick={e => updateTema(options[index][0]) }><Temas className={options[index][0]+ ` inline ` }></Temas></label></div>
 })
+
+
+const telatemascss = `relative bottom-0 left-20  w-full  z-50 
+           hover:visible active:visible invisible`
+
+const [TelaTemasCSS, setTelaTemasCSS] = useState(telatemascss)
+
+function TrocaTema() {
+  setTelaTemasCSS(telatemascss)
+  if(TelaTemasCSS == telatemascss ){
+    setTelaTemasCSS(telatemascss.replace(`invisible`, ``))
+  }
+  else{
+    setTelaTemasCSS(telatemascss)
+  }
+          
+}
 
     return(
 
@@ -85,16 +96,12 @@ const temasbotao = options.map((item, index)=>{
         {/* header */}
         <div className={`flex gap-4 items-center my-auto max-md:flex-wrap`}>
         <div>
-        <select onChange={e => updateTema(e.target.value)} id="p"  className={selectCSS}>
-        {updatedOptions}
-        
-        </select>
-        <div className={`  relative bottom-0 left-20  w-full  z-50
-          peer-focus:visible hover:visible active:visible 
-          `}><div className={`absolute right-0   grid  w-max h-[200px] bg-light p-4  grid-row-2 grid-cols-2 gap-4
+        <button  onClick={e => TrocaTema()} onMouseLeave={e => setTelaTemasCSS(telatemascss)} on>Temas</button>
+        <div className={TelaTemasCSS}><div className={`absolute right-0   border-[6px] border-accent rounded-lg
+        grid  w-max h-max bg-light p-4  grid-row-2 grid-cols-2 gap-4 hover:visible active:visible
            `}
           >
-              {temasbotao}
+              {TemasBotao}
               </div>
           </div>
           </div>

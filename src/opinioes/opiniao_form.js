@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Opinioes from "./opiniao";
-
+import 'flowbite';
 
 
 function Opiniao_form(){
@@ -12,12 +12,12 @@ function Opiniao_form(){
 
     {/*Titulo,                          required       type      pattern                                                codigo  State         setState        max-size     placeholder*/}
     const registros =     
-[   ["Nome de Registro",                "required",   "",   false,                                                     1,   Nome,         setNome,        "255",      "Anônimo"],
-    ["E-mail",                          "required",   "",  "[A-Za-z0-9]+@{1}[A-Za-z0-9]+[\.]{1}[c]{1}[o]{1}[m]{1}",                                                        2,   Email,     setEmail,          "",         " "],
+[   ["Nome de Registro",                "required",   "text",   false,                                                     1,   Nome,         setNome,        "255",      "Anônimo"],
+    ["E-mail",                          "required",   "email",  "[A-Za-z0-9]+@{1}[A-Za-z0-9]+[\.]{1}[c]{1}[o]{1}[m]{1}",    2,   Email,     setEmail,          "",         " "],
     ["Como conheceu o componente",      "unrequired", "",       false,                                                         , ComoInput,   setComoInput,      "",         " "]
     
 ]
-const RegistroTextCssInput = `relative peer  block   bg-light   placeholder-shown:border-main border-accent  focus:outline outline-[2px] outline-offset-[-3px] outline-main  focus:border-accent
+const RegistroTextCssInput = `relative peer  block   bg-light   placeholder-shown:border-main border-accent  focus:outline focus:outline-[2px] focus:outline-offset-[-3px] focus:outline-main  focus:border-accent
        w-[100%]   border-4   rounded pt-4 pl-4 pb-2 font-semibold `
 
 const RegistroTextCssSpan = `absolute top-[30%] left-2 pl-[10px] pr-[10px]  font-semibold   rounded-lg    font-semibold
@@ -47,9 +47,9 @@ const deleta = (e, setValue) => {
     const updatedConheceu = Conheceu?.map((item, index)=>{
       return <option value={Conheceu[index][0]} className="font-semibold" ><p id="p">{Conheceu[index][1]}</p></option>
     })
-    const [ComoCSS, setComoCSS] = useState(`bg-light ml-2 pl-2 pr-2 p-1 border-4 focus:ring-0 ring-0 border-transparent focus:border-transparent outline-main rounded`); 
+    const [ComoCSS, setComoCSS] = useState(`bg-light ml-2 p-2 text-[1.2rem] border-4 focus:ring-0 ring-0 border-transparent focus:border-transparent outline-main rounded`); 
     const updateComo = (item) => {
-      setComoCSS(`bg-light ml-2 pl-2 pr-2 p-1 border-4 focus:border-transparent focus:ring-0  ring-0 border-transparent outline-main rounded`)
+      setComoCSS(`bg-light ml-2 p-2 text-[1.2rem] border-4 focus:border-transparent focus:ring-0  ring-0 border-transparent outline-main rounded`)
       if(item == "outro"){
         setComo(false);
       }else{
@@ -57,7 +57,7 @@ const deleta = (e, setValue) => {
         setComoInput("")
       }
       if(item != "selecione"){
-        setComoCSS(`bg-light ml-2 pl-2 pr-2 p-1 focus:ring-0 ring-0  border-4 focus:border-accent border-accent outline-main rounded`)
+        setComoCSS(`bg-light ml-2 p-2 text-[1.2rem] focus:ring-0 ring-0  border-4 focus:border-accent border-accent outline-main rounded`)
       }
     
     }
@@ -83,7 +83,9 @@ const deleta = (e, setValue) => {
             {updatedConheceu}
             </select>
             <input type=""  id="outro"  disabled={Como}  value={ComoInput} onChange={e => setComoInput(e.target.value)}  onFocus={event =>updateComoInput(event.target.value)} onKeyDown={e => deleta(e, registros[index][6])}
-                className={`rounded bg-light pl-2 p-1 pt-[5px] border-4 border-transparent focus:border-accent focus:outline outline-2 outline-offset-[-3px] font-semibold focus:outline-main`} placeholder="Especifique" maxLength={30}></input>
+                className={`rounded bg-light pl-2 p-1 pt-[5px] border-4 border-transparent 
+                focus:border-accent focus:outline outline-2 outline-offset-[-3px] font-semibold 
+                focus:outline-main`} placeholder="Especifique" maxLength={30}></input>
             </p></div><hr className={RegistroHR}></hr></div>;
           }
           else{
@@ -91,7 +93,8 @@ const deleta = (e, setValue) => {
       
             return <div><div className={RegistroTextCssDiv}>
             <label className="relative ">
-            <input type={registros[index][2]} value={registros[index][5]} onChange={e => registros[index][6](e.target.value)} pattern={registros[index][3]}   onKeyDown={e => deleta(e, registros[index][6])}
+            <input type={registros[index][2]} value={registros[index][5]} onChange={e => registros[index][6](e.target.value)} 
+            pattern={registros[index][3]}   onKeyDown={e => deleta(e, registros[index][6])}
             placeholder={registros[index][8]} className={RegistroTextCssInput} maxLength={registros[index][7]}
               ></input>
             <span id="in" className={RegistroTextCssSpan}
@@ -111,8 +114,8 @@ const deleta = (e, setValue) => {
     const updatedRegistrosCheckbox = registrosCheckbox?.map((registro, index) => {
         return(
             <div>
-                <input type="checkbox" value={registrosCheckbox[index][1]} name="ferramentas" className={CheckboxCSS}></input> 
-                <label className={` font-semibold pl-2 peer-checked:text-accent`}>{registrosCheckbox[index][0]}</label>
+                <input type="checkbox" value={registrosCheckbox[index][1]} id={registrosCheckbox[index][1]} name="ferramentas" className={CheckboxCSS}></input> 
+                <label for={registrosCheckbox[index][1]} className={` font-semibold pl-2 peer-checked:text-accent`}>{registrosCheckbox[index][0]}</label>
             </div>
         )
 
@@ -148,8 +151,9 @@ const deleta = (e, setValue) => {
                 {valoresRadio?.map((x,y) => {
                     if(valoresRadio[index][y]){
                     return <div className="">
-                <input type="radio" value={valoresRadio[index][y]} name={registrosRadio[index][1]} className={` peer bg-dark accent-accent ring-offset-gray-800 `}></input> 
-                <label className={` font-semibold pl-2 peer-checked:text-accent   `} >{valoresRadio[index][y]}</label>
+                <input type="radio" value={valoresRadio[index][y]} id={valoresRadio[index][y]+registrosRadio[index][1]} name={registrosRadio[index][1]} 
+                className={`apearance-none peer bg-light  `}></input> 
+                <label for={valoresRadio[index][y]+registrosRadio[index][1]} className={` font-semibold pl-2 peer-checked:text-accent   `} >{valoresRadio[index][y]}</label>
             </div>}
                 })}
                 </div>
@@ -164,7 +168,10 @@ const deleta = (e, setValue) => {
     const TextBox = () => {
       return <div><p id="p">
         <label className="block pl-2 font-semibold pb-2">Críticas e sujestões</label>
-        <textarea className={`resize font-semibold rounded-md bg-light outline-main w-[75%] border-4  placeholder-shown:border-main border-accent focus:border-accent   focus:outline outline-[2px] outline-offset-[-3px] outline-main `} 
+        <textarea className={`w-max font-semibold rounded-md bg-light outline-main   text-[1.2rem]
+        border-4  placeholder-shown:border-main border-accent focus:border-accent   
+        focus:outline outline-[2px] outline-offset-[-3px] outline-main  focus:ring-0
+        `} 
         placeholder="Digite sua opinião"></textarea>
       </p></div>
     }
