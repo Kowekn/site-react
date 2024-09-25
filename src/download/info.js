@@ -1,6 +1,6 @@
 import React from "react";
 
-import { Link } from "react-router-dom";
+
 
 
 
@@ -11,7 +11,8 @@ const TextoCSS = ``
 
 function Info(){
     return(
-        <div className={`basis-full bg-gradient-to-r from-dark to-light`} >       
+        <div className={`sm:basis-full relative top-0 
+        bg-gradient-to-r from-dark to-light`} >       
         
         <div>
             <div className={``}> 

@@ -163,11 +163,7 @@ const VerificaInput = (e, setValue, index , Value) => {
    
     
   }
-const deleta = (e, setValue) => {
-  if(e.keyCode == 8){
-        
-    
-}}
+
     {/*Titulo,                      required       type      pattern                                                codigo  State         setState        max-size */}
 const registros = 
 [ ["Nome de Registro",             "required",   "text",   false,                                                     1,   Nome,         setNome,        "255" ],
@@ -192,9 +188,9 @@ const RegistroTextCssSpan = `absolute top-[30%] left-2 pl-[10px] pr-[10px]  font
  peer-focus:translate-y-[-100%] peer-focus:scale-75 peer-[:not(:placeholder-shown)]:translate-y-[-100%] 
  peer-[:not(:placeholder-shown)]:scale-75 peer-focus:text-accent`
 
-const RegistroTextCssDiv = `w-[100%] min-w-[400px] max-w-[600px] mb-2 mt-2`
+const RegistroTextCssDiv = `w-[95%] min-w-[400px] max-w-[600px] mb-2 mt-2`
 
-const RegistroHR = `w-[100%] min-w-[400px] max-w-[600px] border-main relative bottom-4 left-0 bottom-2 mt-8`
+const RegistroHR = `w-[96%] min-w-[400px] max-w-[600px] border-main relative bottom-4 left-0 bottom-2 mt-8`
 
 const Estados =  [[`AC`,`Acre`],             [`AL`,`Alagoas`],               [`AP`,`Amapá`],                  [`AM`,`Amazonas`],    
                   [`BA`,`Bahia`],            [`CE`,`Ceará`],                 [`ES`,`Espirito Santo`],         [`GO`,`Goiânia`],               
@@ -260,11 +256,12 @@ const updateEstados = (e) => {
 
 const updatedRegistros = registros?.map((registro, index)=>{
   if(registros[index][0] == "Estado"){
-    return <div ><hr className={`w-[100%] min-w-[400px] max-w-[600px] border-main relative bottom-4 left-0 bottom-4`}></hr>
+    return <div ><hr className={`w-[96%] min-w-[400px] max-w-[600px] border-main relative bottom-4 left-0 bottom-4`}></hr>
             <div className={`block relative left-0 pl-5 mt-1 `}>
             
             <p id="p"><label className={`font-semibold `}>Estado:</label></p>
-            <p id="p" className={`font-semibold `}><select name="estado" title="Estados" value={Estado} onChange={e => updateEstados(e.target.value)}
+            <p id="p" className={`font-semibold `}><select name="estado" title="Estados" value={Estado} 
+            onChange={e => updateEstados(e.target.value)}
             className={EstadoCSS}>
             <option selected value="selecione" className={` font-semibold`}>--Selecione--</option>
               {updatedEstados}
@@ -291,8 +288,9 @@ const updatedRegistros = registros?.map((registro, index)=>{
       <option selected value="selecione" className="font-semibold focus:ring-0"><p id="p">--Selecione--</p></option>
     {updatedConheceu}
     </select>
-    <input   id="outro"  disabled={Como}  value={ComoInput} onChange={e => setComoInput(e.target.value)}  onFocus={event =>updateComoInput(event.target.value)} onKeyDown={e => deleta(e, registros[index][6])}
-        className={`rounded bg-light pl-2 p-1 pt-[5px] border-4 border-transparent focus:border-accent focus:outline outline-2 outline-offset-[-3px] font-semibold focus:outline-main`} placeholder="Especifique" maxLength={30}></input>
+    <input   id="outro"  disabled={Como}  value={ComoInput} onChange={e => setComoInput(e.target.value)}  
+    onFocus={event =>updateComoInput(event.target.value)} 
+        className={`rounded bg-light p-[6px] border-4 border-transparent focus:border-accent focus:outline outline-2 outline-offset-[-3px] font-semibold focus:outline-main`} placeholder="Especifique" maxLength={30}></input>
     </p></div><hr className={RegistroHR}></hr></div>;
   }
   
@@ -301,7 +299,10 @@ const updatedRegistros = registros?.map((registro, index)=>{
 
       return <div><div className={RegistroTextCssDiv}>
       <label className="relative ">
-      <input required  type={registros[index][2]} value={registros[index][5]} onChange={e => registros[index][6](e.target.value)} pattern={registros[index][3]} onInput={event => VerificaInput(event, registros[index][6], registros[index][4],registros[index][5])}  onKeyDown={e => deleta(e, registros[index][6])}
+      <input required  type={registros[index][2]} value={registros[index][5]} 
+      onChange={e => registros[index][6](e.target.value)} pattern={registros[index][3]} 
+      onInput={event => VerificaInput(event, registros[index][6], registros[index][4],registros[index][5])}  
+      
       placeholder=" " className={RegistroTextCssInput} maxLength={registros[index][7]}
         ></input>
       <span id="in" className={RegistroTextCssSpan}
@@ -313,7 +314,9 @@ const updatedRegistros = registros?.map((registro, index)=>{
 
       return <div><div className={RegistroTextCssDiv}>
       <label className={`relative `}>
-      <input  type={registros[index][2]} value={registros[index][5]} onChange={e => registros[index][6](e.target.value)} pattern={registros[index][3]}  onInput={event => VerificaInput(event, registros[index][6], registros[index][4],registros[index][5]) }    onKeyDown={e => deleta(e, registros[index][6])} 
+      <input  type={registros[index][2]} value={registros[index][5]} onChange={e => registros[index][6](e.target.value)} 
+      pattern={registros[index][3]}  onInput={event => VerificaInput(event, registros[index][6], registros[index][4],registros[index][5]) }    
+      
       placeholder=" " className={RegistroTextCssInput} maxLength={registros[index][7]}
         ></input>
       <span id="in" className={RegistroTextCssSpan}
@@ -335,15 +338,10 @@ const updatedRegistros = registros?.map((registro, index)=>{
 
 
     return(
-        <div className={`flex flex-row-reverse place-content-start `} >
+        <div className={` place-content-start grid sm:grid-cols-2 grid-cols-1 `} >
             
-            <div className={`basis-5/12 p-4 place-content-center mb-8   `}>
-              <div className={` `}
-              ><BrasilEscuro
-                className={`bg-dark rounded-[100px] p-16 max-w-[75%] h-[3%]  object-scale-down place-self-center`}
-              ></BrasilEscuro></div>
-            </div>
-            <div className={` basis-7/12 `}>
+            
+            <div className={`  `}>
             
             <div className={`flex flex-col   p-4  pl-8  pb-16  text-start`}>
             <h id="h" className={`pb-4`}>Registro de Componentes</h>
@@ -366,20 +364,29 @@ const updatedRegistros = registros?.map((registro, index)=>{
 
                     {updatedRegistros}
                     
-                    <div className={`flex flex-row `}>
-                    <div className={`w-[100%] min-w-[175px] max-w-[250px] `}></div>
+                    <div className={`grid grid-rows-1 place-content-center `}>
+                    
                     <button id="in" type="Submit" value="Enviar" className={` focus:outline-main  p-4 text-main 
-                     rounded shadow-inner bg-accent font-semibold`}  
+                     rounded shadow-inner mr-6 sm:mr-24  bg-accent font-semibold self-center`}  
                      >Enviar</button>
-                   
-                        <div className={`w-[75%]   `}></div>
+                    
                       </div>
 
                 </form>
             </fieldset>
             </div>
             
-            
+            <div className={`w-full p-4  mb-8  `}>
+              <div className={`w-full flex flex-row items-center place-content-center h-full`}
+              >
+              <div className={`basis-1/3  `}></div>
+              <BrasilEscuro
+                className={` bg-dark rounded-[100px] p-16    size-auto
+                object-scale-down  `}
+              ></BrasilEscuro>
+              <div className={`basis-1/3`}></div>
+              </div>
+            </div>
         </div>
     )
 }

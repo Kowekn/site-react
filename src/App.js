@@ -22,7 +22,7 @@ function App() {
   
 
   return (
-    <div className={`App text-main `}>
+    <div className={`App text-main  `}>
     <Head></Head>
     
     

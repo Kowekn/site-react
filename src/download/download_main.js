@@ -6,11 +6,11 @@ import Side_div from "../side_div";
 
 function Download_main() {
     return (
-       <div className="flex flex-row  ">
+       <div className="sm:flex sm:flex-row relative top-0">
         <Side_div></Side_div>
-        <div className="basis-full flex flex-row">
-        <Side className="basis-5/12  "></Side>
-        <Main className={`basis-7/12  bg-gradient-to-r from-dark to-light via-dark  `}></Main>
+        <div className="basis-full sm:flex sm:flex-row relative top-0">
+        <Side className={`sm:basis-4/12 sm:relative`}> </Side>
+        <Main className={`sm:basis-full relative top-0  bg-gradient-to-r from-dark to-light via-dark  `}></Main>
         </div>
         <Side_div></Side_div>
        </div>
