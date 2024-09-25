@@ -78,19 +78,19 @@ function Home() {
       
 
       {/* titulo */}
-      <div className={`flex bg-fixed  w-full min-w-[20%]    
-      relative overflow-hidden flex-col justify-center items-center px-16 py-20 text-8xl tracking-tight text-center 
-      backdrop-blur-[calc(var(--sds-size-blur-100] leading-[110.88px] min-h-[800px] text-main
-      max-md:px-5 max-md:text-4xl bg-gradient-to-r from-light to-light via-dark
+      <div className={`flex   w-full min-w-[20%]    
+      relative overflow-hidden flex-col justify-center items-center px-16 py-20   text-center 
+        min-h-[700px] text-main
+      max-md:px-5  bg-gradient-to-r from-light to-light via-dark
        `}
       >
       <div className={` relative z-0 `}>
      <Bulb
-     className={`fill-light mix-color-dodge aspect-video w-[100%] stroke-main z-10 place-self-center bg-transparent absolute top-[-275%] left-0`}
+     className={`fill-light/35 mix-color-dodge aspect-video w-[100%] stroke-main z-10 place-self-center bg-transparent absolute top-[-125%] sm:top-[-210%] left-0`}
      ></Bulb>
-      <div id="t" className={`text-main z-20 top-0 left-0 border-dark border-[21px]   justify-center border-solid border-opacity-60 
+      <div id="t" className={`text-main z-20 top-0 left-0 border-dark border-[30px]   justify-center border-solid border-opacity-60 
       bg-transparent   `}>
-        <div className={`tracking-wide `}> Visual ReportX</div>
+        <div className={`tracking-wide text-9xl h-full select-none`}><p> Visual ReportX </p></div>
        
         
       </div>

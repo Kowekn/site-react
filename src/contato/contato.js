@@ -1,5 +1,5 @@
 import React from "react";
-import * as consts from "../css_consts"
+import {ReactComponent as BrasilEscuro} from "../imagens/brasil_join.svg";
 import Side_div from "../side_div";
 
 
@@ -16,7 +16,7 @@ const Contato = () => {
                     <h1 id="h">Contato</h1>
                 </div>
                 <div>
-                   
+                   <BrasilEscuro className=""></BrasilEscuro>
                 </div>
 
             </div>

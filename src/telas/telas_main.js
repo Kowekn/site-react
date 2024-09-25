@@ -12,7 +12,7 @@ const DivCSS = `flex flex-col`
 
 const TextoCSS = `pl-4 pb-4`
 
-const ImagemCSS = `place-self-center shadow-md shadow-accent brightness-[.85]  `
+const ImagemCSS = `place-self-center shadow-md shadow-accent brightness-[.85] contrast-125 `
 
 const seila =  
     [[`Formulário de configuração`,
@@ -44,9 +44,9 @@ const printa = seila.map((item, index) =>{
             <div className={TextoCSS}>
             <h1 id="h" >{seila[index][0]}</h1>
                 <p id="p">{seila[index][1]}</p></div>
-                
+            
                 <img className={ImagemCSS} src={seila[index][2]} alt={seila[index][3]}></img>
-                
+            
             </div>
     })
 

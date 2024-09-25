@@ -4,7 +4,7 @@ import {ReactComponent as LinkdeinIcone} from "./imagens/linkedin.svg"
 import {ReactComponent as EmailIcone} from "./imagens/email.svg"
 function Footer(){
     return(
-    <footer className={`bg-dark`}>
+    <footer className={`bg-dark relative bottom-0  `}>
       <div className={`flex flex-col justify-center py-px    max-md:mr-0.5 max-md:max-w-full`}>
         <div className={`flex flex-col justify-center items-start border border-solid border-light max-md:pr-5 max-md:max-w-full`}>
           <div className={`flex flex-col flex-wrap  items-start pt-5 pb-2 pr-8 pl-3.5 max-w-full  w-[1208px] max-md:pr-5`}>

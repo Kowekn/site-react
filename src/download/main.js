@@ -35,7 +35,7 @@ const ItensTabelaAnteriores = [["Versões anteriores","" ],
 
 
 
-const TableCSS =    `w-[600px] self-center  mb-4 bg-gradient-to-t from-light to-dark via-light
+const TableCSS =    `w-full  self-center  mb-4 bg-gradient-to-t from-light to-dark via-light
                     border border-collapse border-spacing-2   bg-light `; 
 
 const TheadCSS = `border border-dark bg-dark  `;
@@ -87,7 +87,8 @@ const TextoCSS = ``
 
 function Main() {
     return(
-        <div className={`basis-full bg-gradient-to-r from-dark to-light via-dark `} >       
+        <div className={`sm:basis-full relative top-0
+        bg-gradient-to-r from-dark to-light via-dark `} >       
         
         <div>
             <div className={``}> 
