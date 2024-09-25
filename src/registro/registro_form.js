@@ -164,6 +164,7 @@ const VerificaInput = (e, setValue, index , Value) => {
     
   }
 
+
     {/*Titulo,                      required       type      pattern                                                codigo  State         setState        max-size */}
 const registros = 
 [ ["Nome de Registro",             "required",   "text",   false,                                                     1,   Nome,         setNome,        "255" ],
@@ -369,6 +370,7 @@ const updatedRegistros = registros?.map((registro, index)=>{
                     <button id="in" type="Submit" value="Enviar" className={` focus:outline-main  p-4 text-main 
                      rounded shadow-inner mr-6 sm:mr-24  bg-accent font-semibold self-center`}  
                      >Enviar</button>
+                    
                     
                       </div>
 
