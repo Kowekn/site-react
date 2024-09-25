@@ -1,7 +1,7 @@
 import * as React from "react";
 import { Link } from "react-router-dom";
 import {ReactComponent as Logo} from './imagens/logo_joinbit_visual_reportx.svg'
-import * as consts from "./css_consts";
+
 import { useState } from "react";
 import {ReactComponent as Temas} from './imagens/temas.svg'
 

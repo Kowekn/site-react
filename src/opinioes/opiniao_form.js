@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Opinioes from "./opiniao";
+
 import 'flowbite';
 
 
@@ -70,7 +70,7 @@ const deleta = (e, setValue) => {
             return <div>
             <div className="block relative left-0 pl-2  mt-3 bg-inherit">
             <p id="p" className="bg-inherit">
-            <label className="font-semibold block ">Como conheceu o componente:</label>
+            <label className="font-semibold block select-none">Como conheceu o componente:</label>
             <select name="fonte" id="componente" onChange={event => updateComo(event.target.value)}
               className={ComoCSS}  >
               <option selected value="selecione" className="font-semibold"><p id="p">--Selecione--</p></option>
@@ -87,7 +87,7 @@ const deleta = (e, setValue) => {
             
       
             return <div><div className={RegistroTextCssDiv}>
-            <label className="relative ">
+            <label className="relative select-none">
             <input type={registros[index][2]} value={registros[index][5]} onChange={e => registros[index][6](e.target.value)} 
             pattern={registros[index][3]}   onKeyDown={e => deleta(e, registros[index][6])}
             placeholder={registros[index][8]} className={RegistroTextCssInput} maxLength={registros[index][7]}
@@ -110,7 +110,7 @@ const deleta = (e, setValue) => {
         return(
             <div>
                 <input type="checkbox" value={registrosCheckbox[index][1]} id={registrosCheckbox[index][1]} name="ferramentas" className={CheckboxCSS}></input> 
-                <label for={registrosCheckbox[index][1]} className={` font-semibold pl-2 peer-checked:text-accent`}>{registrosCheckbox[index][0]}</label>
+                <label for={registrosCheckbox[index][1]} className={`select-none font-semibold pl-2 peer-checked:text-accent`}>{registrosCheckbox[index][0]}</label>
             </div>
         )
 
@@ -148,7 +148,7 @@ const deleta = (e, setValue) => {
                     return <div className="">
                 <input type="radio" value={valoresRadio[index][y]} id={valoresRadio[index][y]+registrosRadio[index][1]} name={registrosRadio[index][1]} 
                 className={`apearance-none peer bg-light  `}></input> 
-                <label for={valoresRadio[index][y]+registrosRadio[index][1]} className={` font-semibold pl-2 peer-checked:text-accent   `} >{valoresRadio[index][y]}</label>
+                <label for={valoresRadio[index][y]+registrosRadio[index][1]} className={` font-semibold pl-2 peer-checked:text-accent  select-none `} >{valoresRadio[index][y]}</label>
             </div>}
                 })}
                 </div>
@@ -184,7 +184,7 @@ const deleta = (e, setValue) => {
         {updatedRegistros}
         <fieldset className="">
         <p id="p">
-        <label className="block pl-2 font-semibold pb-2">Quais ferramentas você utiliza?</label>  
+        <label className="block pl-2 font-semibold pb-2 select-none">Quais ferramentas você utiliza?</label>  
         <div className={`grid grid-rows-2 grid-flow-col place-content-evenly border border-2 rounded border-main p-4 w-[95%] 
         has-[:checked]:border-accent bg-light `}> 
                 

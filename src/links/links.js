@@ -1,5 +1,5 @@
 import React from "react";
-import * as consts from "../css_consts"
+
 import Side_div from "../side_div";
 
 

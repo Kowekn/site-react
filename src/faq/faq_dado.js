@@ -1,7 +1,6 @@
 import React, { useState } from "react";
-import * as consts from "../css_consts"
-import Side_div from "../side_div";
-import {ReactComponent as Bulb} from "../imagens/bulb4.svg"
+
+
 import { Link } from "react-router-dom";
 import Virtualizador13 from "../apps/repx375.exe";
 import Virtualizador12 from "../apps/repx261.exe";

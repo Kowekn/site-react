@@ -1,5 +1,5 @@
 import React from "react";
-import Side_div from "../side_div";
+
 import { useState } from "react";
 import {ReactComponent as BrasilEscuro} from "../imagens/brasil_join.svg";
 import 'flowbite';
@@ -259,7 +259,7 @@ const updatedRegistros = registros?.map((registro, index)=>{
     return <div ><hr className={`w-[96%] min-w-[400px] max-w-[600px] border-main relative bottom-4 left-0 bottom-4`}></hr>
             <div className={`block relative left-0 pl-5 mt-1 `}>
             
-            <p id="p"><label className={`font-semibold `}>Estado:</label></p>
+            <p id="p"><label className={`font-semibold select-none`}>Estado:</label></p>
             <p id="p" className={`font-semibold `}><select name="estado" title="Estados" value={Estado} 
             onChange={e => updateEstados(e.target.value)}
             className={EstadoCSS}>
@@ -271,7 +271,7 @@ const updatedRegistros = registros?.map((registro, index)=>{
   if(registros[index][0] == "Número de Licenças"){
     return <div><div className={`block relative left-0 pl-5  mt-3`}>
                 <p id="p">
-                <label className={` font-semibold `}>Número de Licenças:</label>
+                <label className={` font-semibold select-none`}>Número de Licenças:</label>
                 <select  name="licencas"
                   className={`bg-light ml-2 pl-2 pr-2 p-1 text-[1.2rem] border-4 border-accent outline-main rounded`} >
                 <option value="1" className="font-semibold">1</option>
@@ -282,7 +282,7 @@ const updatedRegistros = registros?.map((registro, index)=>{
     return <div>
     <div className={`block relative left-0 pl-5  mt-3 `}>
     <p id="p">
-    <label className={`block  font-semibold`}>Como conheceu o componente:</label>
+    <label className={`block  font-semibold select-none`}>Como conheceu o componente:</label>
     <select name="fonte" id="componente" onChange={event => updateComo(event.target.value)}
       className={ComoCSS}  >
       <option selected value="selecione" className="font-semibold focus:ring-0"><p id="p">--Selecione--</p></option>
@@ -298,7 +298,7 @@ const updatedRegistros = registros?.map((registro, index)=>{
       if(registros[index][1] == "required"){
 
       return <div><div className={RegistroTextCssDiv}>
-      <label className="relative ">
+      <label className="relative select-none">
       <input required  type={registros[index][2]} value={registros[index][5]} 
       onChange={e => registros[index][6](e.target.value)} pattern={registros[index][3]} 
       onInput={event => VerificaInput(event, registros[index][6], registros[index][4],registros[index][5])}  
@@ -313,7 +313,7 @@ const updatedRegistros = registros?.map((registro, index)=>{
       else{
 
       return <div><div className={RegistroTextCssDiv}>
-      <label className={`relative `}>
+      <label className={`relative select-none`}>
       <input  type={registros[index][2]} value={registros[index][5]} onChange={e => registros[index][6](e.target.value)} 
       pattern={registros[index][3]}  onInput={event => VerificaInput(event, registros[index][6], registros[index][4],registros[index][5]) }    
       
@@ -395,13 +395,3 @@ const updatedRegistros = registros?.map((registro, index)=>{
 export default Registro_form;
 
 
-{/*import React from "react";
-
-function Registro_form() {
-    return(
-        <div>
-
-        </div>
-    )
-}
-export default Registro_form;*/}
